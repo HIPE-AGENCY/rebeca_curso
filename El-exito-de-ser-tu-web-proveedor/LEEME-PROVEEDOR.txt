@@ -1,0 +1,48 @@
+EL ÉXITO DE SER TÚ — ARCHIVOS PARA PUBLICACIÓN
+Rebeca Cáceres · Versión 21 publicada, exportada el 17 de octubre de 2026.
+
+CONTENIDO
+web/index.html: landing principal.
+web/3-horas.html: copia de la landing con URL alternativa.
+web/inscripcion.html: página de solicitud de inscripción.
+web/taller.css y web/approved.css: estilos de la landing y recursos compartidos.
+web/inscripcion.css y web/inscripcion.js: estilos y comportamiento de inscripción.
+web/assets/: fotos, portada, logotipo, firma y recursos gráficos.
+
+INSTALACIÓN
+Publicar el contenido de web/ en el directorio o subdirectorio elegido del alojamiento. Conservar nombres y rutas relativas. Es una web estática HTML/CSS/JavaScript: no necesita compilación, base de datos ni Node.js en producción. No sustituir una web existente sin acordar antes la ruta de publicación.
+
+TIPOGRAFÍAS
+Playfair Display y Poppins se cargan desde Google Fonts mediante taller.css; necesitan conexión a Internet. La imagen de la firma utiliza el recurso assets/firma-mask.svg.
+
+INSCRIPCIÓN Y PAGOS
+Los cinco botones Me apunto llevan a inscripcion.html.
+El formulario NO almacena datos ni envía mensajes automáticamente. Abre WhatsApp con una solicitud preparada al +34 626 517 781, o el cliente de correo hacia hola@rebecacaceres.com. El visitante debe enviar el mensaje.
+Esta versión NO incluye Stripe ni otro cobro online, confirmación automática de plaza, envío de acceso al directo ni plataforma de grabaciones. Si se incorpora un enlace de pago, revisar el formulario y los textos de confirmación para que reflejen el proceso real.
+
+PUBLICACIÓN Y COMPROBACIONES
+Revisar la visualización en móvil y escritorio, enlaces, fuentes, firma y funcionamiento de WhatsApp/correo en el alojamiento definitivo. Incorporar los avisos legales y de privacidad aplicables al sitio del titular antes de ponerlo en explotación. No se incluyen credenciales, repositorio Git ni configuración del alojamiento original.
+
+DATOS DEL TALLER
+28 de noviembre de 2026, 11:00–14:00 Madrid. Inversión: 150 €.
+Miami y Colombia: 05:00 AM–08:00 AM. Venezuela: 06:00 AM–09:00 AM.
+Online en directo. Grabación con acceso durante 30 días.
+
+REVISIÓN (18 de octubre de 2026)
+web/dinamico.css y web/dinamico.js: animaciones de entrada y al hacer scroll (desactivadas si el sistema pide reducir movimiento), cuenta atrás hasta el 28/11/2026 11:00 Madrid y botón "Me apunto" fijo en móvil.
+Imágenes servidas en WebP a su tamaño de uso (assets/*.webp). Los JPG/PNG originales se conservan en assets/.
+Nuevos: assets/favicon-32.png, assets/apple-touch-icon.png y assets/og-el-exito-de-ser-tu.jpg (imagen al compartir el enlace, 1200×630).
+URL de publicación: https://club.rebecacaceres.com/ (subdominio en GitHub Pages; la landing va en la raíz y se reutiliza en próximas campañas). El canonical y el Open Graph ya apuntan ahí. web/CNAME contiene el dominio para GitHub Pages. DNS: registro CNAME "club" → <usuario>.github.io. Si cambia el dominio, actualizar web/CNAME y esas etiquetas en index.html, 3-horas.html e inscripcion.html.
+Tipografías alojadas en web/fonts/ (ya no se cargan desde Google Fonts).
+
+LEGAL Y COOKIES
+Pie de todas las páginas: enlaces a Aviso legal y Privacidad de rebecacaceres.com, a web/cookies.html y "Configurar cookies".
+Bajo el formulario: aviso básico de protección de datos (responsable Rebeca Cáceres Alfonso).
+web/cookies.html: política de cookies propia de la landing. Muestra solo las herramientas activas.
+Si el titular pasa a ser una empresa de EE. UU., cambiar los datos del responsable en cookies.html e inscripcion.html y revisar los enlaces legales.
+
+MEDICIÓN (web/analitica.js)
+Rellenar al principio del archivo los identificadores que se usen: clarityId (Microsoft Clarity), ga4Id (Google Analytics 4) y metaPixelId (píxel de Meta).
+Con todos vacíos no aparece banner y no se carga nada de terceros.
+Cada herramienta se carga solo después de que el visitante la acepte en el banner. La elección se guarda 12 meses.
+Eventos enviados: cta_click (con la zona del botón), section_view (programa, sobre_rebeca, precio_y_fecha), scroll_depth (25/50/75/100) y generate_lead (whatsapp o email; en Meta se registra como Lead).

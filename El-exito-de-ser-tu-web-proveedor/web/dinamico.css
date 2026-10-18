@@ -1,0 +1,58 @@
+/* Revisión: correcciones y dinamismo. Se carga después de approved.css. */
+
+/* Imágenes con width/height declarados: mantener la proporción donde el CSS solo fija el ancho. */
+.hero-art .monogram,.ribbon img{height:auto}
+
+/* Pie en móvil: formas decorativas más pequeñas y por debajo del texto de contacto. */
+@media(max-width:750px){
+  .approved-footer{padding-bottom:85px}
+  .approved-footer:before{width:70px;height:110px;left:-38px;bottom:-48px}
+  .approved-footer:after{width:70px;height:110px;left:-8px;bottom:-70px}
+}
+
+/* Cuenta atrás */
+.topline-countdown{font-weight:600}
+.topline-countdown:not(:empty):before{content:' · ';font-weight:400}
+.countdown{margin-top:30px}
+.countdown[hidden]{display:none}
+.countdown-label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin-bottom:12px}
+.countdown-units{display:flex;gap:10px}
+.countdown-units>div{min-width:68px;padding:10px 8px 8px;text-align:center;border:1px solid #111b2630;background:#fff}
+.countdown-units strong{display:block;font-family:'Playfair Display',serif;font-size:34px;font-weight:500;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.countdown-units span{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+@media(max-width:750px){
+  .countdown-units{gap:8px}
+  .countdown-units>div{min-width:0;flex:1}
+  .countdown-units strong{font-size:30px}
+}
+
+/* Botón fijo en móvil */
+.sticky-cta{display:none}
+@media(max-width:750px){
+  .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;align-items:center;justify-content:space-between;gap:12px;padding:12px 6vw calc(12px + env(safe-area-inset-bottom));background:#111b26;color:#fff;font-size:12px;box-shadow:0 -6px 20px #0003;transform:translateY(110%);transition:transform .35s ease,visibility .35s;visibility:hidden}
+  .sticky-cta.is-visible{transform:none;visibility:visible}
+  .sticky-cta strong{font-weight:600}
+  .sticky-cta .button{background:#d4f46c;color:#111b26;padding:11px 16px}
+}
+
+/* Animaciones: solo si la persona no ha pedido reducir el movimiento. */
+@media(prefers-reduced-motion:no-preference){
+  /* Entrada de la portada al cargar */
+  .hero-copy>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) backwards}
+  .hero-copy>:nth-child(2){animation-delay:.08s}
+  .hero-copy>:nth-child(3){animation-delay:.18s}
+  .hero-copy>:nth-child(4){animation-delay:.26s}
+  .hero-copy>:nth-child(5){animation-delay:.34s}
+  .hero-copy>:nth-child(n+6){animation-delay:.42s}
+  .hero-art{animation:art-in 1.1s .15s cubic-bezier(.2,.7,.2,1) backwards}
+  .photo-label{animation:label-in .7s .9s cubic-bezier(.3,1.4,.5,1) backwards}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}}
+  @keyframes art-in{from{opacity:0;transform:translateX(40px)}}
+  @keyframes label-in{from{opacity:0;transform:rotate(-14deg) scale(.7)}}
+
+  /* Aparición al hacer scroll (clase añadida por dinamico.js) */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.is-visible{opacity:1;transform:none}
+  .reveal .highlight{background-size:0 100%;background-repeat:no-repeat;transition:background-size 1s .45s cubic-bezier(.2,.7,.2,1)}
+  .reveal.is-visible .highlight{background-size:100% 100%}
+}

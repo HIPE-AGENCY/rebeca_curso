@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Rebeca Caceres//El exito de ser tu//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:el-exito-de-ser-tu-20261128@rebecacaceres.com
+DTSTAMP:20261018T120000Z
+DTSTART:20261128T100000Z
+DTEND:20261128T130000Z
+SUMMARY:El éxito de ser tú · Taller online con Rebeca Cáceres
+DESCRIPTION:Taller online en directo. El enlace de acceso está en el email de confirmación que recibiste de hola@rebecacaceres.com.
+LOCATION:Online
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:El taller empieza en 30 minutos
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
