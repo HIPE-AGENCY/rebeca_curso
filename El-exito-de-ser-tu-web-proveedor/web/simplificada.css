@@ -51,3 +51,36 @@
   .enroll-simple-grid{grid-template-columns:1fr;gap:34px;padding:30px 0}
   .enroll-simple .date-number{font-size:88px}
 }
+
+/* Inscripción con pago y página de gracias, con el estilo de la original. */
+.registration-page .registration-submit{background:var(--lime)!important;color:var(--ink)!important}
+.registration-page .check{display:flex;gap:11px;align-items:flex-start;font-size:12px;font-weight:400;line-height:1.6;margin:16px 0;cursor:pointer}
+.registration-page .check input{width:18px;height:18px;margin:1px 0 0;padding:0;flex:none;accent-color:#a92e60}
+.registration-page .check a{color:inherit}
+.registration-page #registration-form .registration-submit{margin-top:10px}
+.secure-line{font-size:11px;margin:14px 0 0;display:flex;gap:8px;align-items:center}
+.registration-page .registration-status{color:#a92e60;margin-top:12px}
+.registration-page .registration-status:empty{display:none}
+.registration-page .privacy-note{margin-top:20px}
+.registration-page .registration-submit[disabled]{opacity:.6;cursor:wait}
+
+.thanks-original{max-width:820px;margin:0 auto;padding:70px 7vw 60px;box-sizing:content-box}
+.thanks-original h1{font-size:clamp(56px,7vw,96px);margin:22px 0}
+.thanks-original h1 em{color:#a92e60}
+.thanks-steps{list-style:none;counter-reset:paso;padding:0;margin:44px 0 30px;border-top:1px solid #111b2620}
+.thanks-steps li{counter-increment:paso;position:relative;padding:26px 0 26px 72px;border-bottom:1px solid #111b2620}
+.thanks-steps li:before{content:counter(paso,decimal-leading-zero);position:absolute;left:0;top:22px;font-family:'Playfair Display',serif;font-size:40px;line-height:1;color:#a92e60}
+.thanks-steps li:nth-child(2):before{color:#167c73}
+.thanks-steps li:nth-child(3):before{color:#516622}
+.thanks-steps h2{font-size:28px;margin:0 0 8px}
+.thanks-steps p{font-size:15px;line-height:1.7;margin:0}
+.calendar-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.calendar-buttons a{font-size:13px;font-weight:600;text-decoration:none;padding:11px 16px;background:var(--lime);color:var(--ink)}
+.calendar-buttons a:nth-child(2){background:var(--aqua)}
+.calendar-buttons a:nth-child(3){background:#ffc9df}
+.thanks-help{font-size:15px}
+@media(max-width:750px){
+  .thanks-original{padding:44px 6vw 40px}
+  .thanks-steps li{padding-left:56px}
+  .thanks-steps li:before{font-size:32px}
+}
