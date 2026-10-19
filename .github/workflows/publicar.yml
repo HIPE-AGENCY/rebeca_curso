@@ -1,0 +1,43 @@
+# Publica la landing en club.rebecacaceres.com (Hostalía) por FTP.
+# Se ejecuta en cada push a main que toque la web, o a mano desde la pestaña Actions.
+# Solo sube los archivos que han cambiado desde la última publicación.
+#
+# Secretos necesarios (Settings → Secrets and variables → Actions):
+#   FTP_SERVER    servidor FTP de Hostalía (p. ej. ftp.rebecacaceres.com)
+#   FTP_USERNAME  usuario FTP
+#   FTP_PASSWORD  contraseña FTP
+#   FTP_DIR       carpeta del subdominio en el servidor, terminada en / (p. ej. /club/)
+
+name: Publicar landing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'El-exito-de-ser-tu-web-proveedor/web/**'
+      - '.github/workflows/publicar.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: publicar-landing
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Subir web/ por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}
+          local-dir: ./El-exito-de-ser-tu-web-proveedor/web/
+          protocol: ftp
+          exclude: |
+            **/.DS_Store
+            CNAME
+            version-*.html
