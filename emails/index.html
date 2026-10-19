@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flujo de emails · El éxito de ser tú</title>
+<style>
+:root{--ink:#111b26;--paper:#f9f7f3;--pink:#ff609f;--pink-ink:#a92e60;--aqua:#61dfcf;--lime:#d4f46c;--muted:#4d5660;--line:#e6e1d8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 Helvetica,Arial,sans-serif}
+header{background:var(--ink);color:#fff;padding:36px 5vw 30px}
+header h1{font:normal 38px/1.1 Georgia,serif;margin:0 0 10px}
+header p{margin:0;max-width:760px;color:#ffffffcc}
+.stripe{display:flex;height:6px}.stripe span{flex:1}
+.toolbar{position:sticky;top:0;z-index:2;background:#f9f7f3f2;border-bottom:1px solid var(--line);padding:12px 5vw;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.toolbar button{font:inherit;font-size:13px;font-weight:bold;padding:8px 14px;border:1px solid #111b2640;background:#fff;cursor:pointer}
+.toolbar button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.legend{margin-left:auto;font-size:13px;color:var(--muted);display:flex;gap:14px;align-items:center}
+main{padding:10px 5vw 60px}
+.phase h2{font:normal 28px/1.2 Georgia,serif;margin:44px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.email{display:grid;grid-template-columns:minmax(260px,1fr) auto;gap:32px;align-items:start;padding:26px 0;border-bottom:1px solid var(--line)}
+.tags{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.num{font:normal 26px/1 Georgia,serif;color:var(--pink-ink)}
+.tag{font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px}
+.tag-pedido{background:var(--lime)}.tag-sugerido{background:var(--aqua)}.tag-escenario{background:#ffe1ec;color:#8a1745}
+.meta h3{font:normal 24px/1.2 Georgia,serif;margin:0 0 14px}
+dl{margin:0;display:grid;grid-template-columns:130px 1fr;gap:6px 14px;font-size:14px}
+dt{color:var(--muted)}dd{margin:0}
+dd.subject{font-weight:bold}
+code{font-size:12px;background:#fff;padding:2px 5px;border:1px solid var(--line)}
+.warn{background:#ffe1ec;color:#8a1745;font-size:13px;padding:10px 12px;margin:14px 0 0}
+.files{font-size:13px;margin:14px 0 0}.files a{color:var(--pink-ink)}
+.frame{width:620px;height:760px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px #111b2614;transition:width .25s}
+.frame iframe{width:100%;height:100%;border:0;display:block}
+body.mobile .frame{width:375px;height:720px}
+@media(max-width:1100px){.email{grid-template-columns:1fr}.frame{width:100%;max-width:620px}}
+</style></head>
+<body>
+<header>
+  <h1>Flujo de emails · El éxito de ser tú</h1>
+  <p>11 emails, desde el anuncio a la comunidad hasta que se cierra la grabación. Los marcados «Pedido» son los que se pidieron; los «Sugerido», los que recomiendo añadir. Las vistas previas usan un nombre de ejemplo («Ana»); el HTML para Brevo lleva las variables reales.</p>
+</header>
+<div class="stripe"><span style="background:var(--pink)"></span><span style="background:var(--aqua)"></span><span style="background:var(--lime)"></span></div>
+<div class="toolbar">
+  <button type="button" data-view="desktop" aria-pressed="true">Escritorio</button>
+  <button type="button" data-view="mobile" aria-pressed="false">Móvil</button>
+  <div class="legend"><span class="tag tag-pedido">Pedido</span><span class="tag tag-sugerido">Sugerido</span></div>
+</div>
+<main>
+<section class="phase">
+  <h2>Lanzamiento</h2>
+  
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">00</span><span class="tag tag-pedido">Pedido</span></div>
+      <h3>Anuncio a la comunidad</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Al abrir las inscripciones, antes de anunciarlo en redes.</dd>
+        <dt>A quién</dt><dd>Toda la lista de newsletter de Rebeca.</dd>
+        <dt>Asunto</dt><dd class="subject">Quería contártelo a ti primero</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Quería contártelo a ti primero</code></dd>
+        <dt>Texto de vista previa</dt><dd>El 28 de noviembre hago algo que llevo tiempo queriendo hacer.</dd>
+      </dl>
+      <p class="warn">Enviarlo antes de publicar el taller en redes: el email dice que se lo cuenta primero a su comunidad.</p>
+      <p class="files"><a href="preview/00-anuncio-comunidad.html" target="_blank">Abrir vista previa</a> · <a href="brevo/00-anuncio-comunidad.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/00-anuncio-comunidad.html" title="Anuncio a la comunidad" loading="lazy"></iframe></div>
+  </article>
+</section>
+<section class="phase">
+  <h2>Antes de comprar</h2>
+  
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">01</span><span class="tag tag-pedido">Pedido</span></div>
+      <h3>Carrito abandonado</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>3 horas después de rellenar el formulario, si no ha pagado.</dd>
+        <dt>A quién</dt><dd>Lista Interesados que NO están en Inscritos.</dd>
+        <dt>Asunto</dt><dd class="subject">Tu plaza sigue esperándote</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Tu plaza sigue esperándote</code></dd>
+        <dt>Texto de vista previa</dt><dd>Te quedaste a un paso de reservar El éxito de ser tú.</dd>
+      </dl>
+      
+      <p class="files"><a href="preview/01-carrito-abandonado.html" target="_blank">Abrir vista previa</a> · <a href="brevo/01-carrito-abandonado.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/01-carrito-abandonado.html" title="Carrito abandonado" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">02</span><span class="tag tag-pedido">Pedido</span><span class="tag tag-escenario">Escenario A · con límite real</span></div>
+      <h3>Quedan pocas plazas</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Envío manual cuando queden 10 plazas o menos del límite fijado en Stripe.</dd>
+        <dt>A quién</dt><dd>Lista de newsletter, excluyendo la lista Inscritos.</dd>
+        <dt>Asunto</dt><dd class="subject">Quedan [N] plazas para el 28 de noviembre</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Quedan [N] plazas para el 28 de noviembre</code></dd>
+        <dt>Texto de vista previa</dt><dd>El grupo es reducido para poder trabajar sobre tu situación real.</dd>
+      </dl>
+      <p class="warn">Requiere un límite de plazas real, fijado en Stripe («Limitar el número de pagos»). Sustituir [N] por las plazas que quedan de verdad el día del envío.</p>
+      <p class="files"><a href="preview/02-quedan-pocas-plazas.html" target="_blank">Abrir vista previa</a> · <a href="brevo/02-quedan-pocas-plazas.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/02-quedan-pocas-plazas.html" title="Quedan pocas plazas" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">02b</span><span class="tag tag-pedido">Pedido</span><span class="tag tag-escenario">Escenario B · sin límite</span></div>
+      <h3>Última semana para apuntarte</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Sábado 21 de noviembre, 10:00 (Madrid). Una semana antes.</dd>
+        <dt>A quién</dt><dd>Lista de newsletter, excluyendo la lista Inscritos.</dd>
+        <dt>Asunto</dt><dd class="subject">Última semana para apuntarte a El éxito de ser tú</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Última semana para apuntarte a El éxito de ser tú</code></dd>
+        <dt>Texto de vista previa</dt><dd>Las inscripciones cierran el viernes 27 a las 23:59 (Madrid).</dd>
+      </dl>
+      <p class="warn">Requiere cerrar de verdad las inscripciones el viernes 27 a las 23:59 (hora de Madrid): ese día, desactivar el enlace de pago en Stripe (Enlaces de pago → Desactivar).</p>
+      <p class="files"><a href="preview/02b-ultima-semana.html" target="_blank">Abrir vista previa</a> · <a href="brevo/02b-ultima-semana.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/02b-ultima-semana.html" title="Última semana para apuntarte" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">02c</span><span class="tag tag-pedido">Pedido</span><span class="tag tag-escenario">Escenario B · sin límite</span></div>
+      <h3>Las inscripciones cierran mañana</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Jueves 26 de noviembre, 10:00 (Madrid).</dd>
+        <dt>A quién</dt><dd>Lista de newsletter, excluyendo la lista Inscritos.</dd>
+        <dt>Asunto</dt><dd class="subject">Las inscripciones cierran mañana</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Las inscripciones cierran mañana</code></dd>
+        <dt>Texto de vista previa</dt><dd>Viernes 27 a las 23:59 (Madrid). El sábado empezamos.</dd>
+      </dl>
+      <p class="warn">Requiere cerrar de verdad las inscripciones el viernes 27 a las 23:59 (hora de Madrid): ese día, desactivar el enlace de pago en Stripe (Enlaces de pago → Desactivar).</p>
+      <p class="files"><a href="preview/02c-cierran-manana.html" target="_blank">Abrir vista previa</a> · <a href="brevo/02c-cierran-manana.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/02c-cierran-manana.html" title="Las inscripciones cierran mañana" loading="lazy"></iframe></div>
+  </article>
+</section>
+<section class="phase">
+  <h2>Después de comprar</h2>
+  
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">03</span><span class="tag tag-pedido">Pedido</span></div>
+      <h3>Confirmación de inscripción</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Al momento de pagar.</dd>
+        <dt>A quién</dt><dd>Contacto añadido a la lista Inscritos (lo hace Make con cada pago de Stripe).</dd>
+        <dt>Asunto</dt><dd class="subject">¡Estás dentro! Tu plaza para El éxito de ser tú está confirmada</dd>
+        <dt>Asunto en Brevo</dt><dd><code>¡Estás dentro! Tu plaza para El éxito de ser tú está confirmada</code></dd>
+        <dt>Texto de vista previa</dt><dd>Guarda la fecha: sábado 28 de noviembre, 11:00 (Madrid).</dd>
+      </dl>
+      
+      <p class="files"><a href="preview/03-confirmacion.html" target="_blank">Abrir vista previa</a> · <a href="brevo/03-confirmacion.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/03-confirmacion.html" title="Confirmación de inscripción" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">04</span><span class="tag tag-sugerido">Sugerido</span></div>
+      <h3>Prepárate para el taller</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Miércoles 25 de noviembre, 10:00 (Madrid). 3 días antes.</dd>
+        <dt>A quién</dt><dd>Lista Inscritos.</dd>
+        <dt>Asunto</dt><dd class="subject">Tres preguntas para llegar al sábado con algo entre manos</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Tres preguntas para llegar al sábado con algo entre manos</code></dd>
+        <dt>Texto de vista previa</dt><dd>Una pequeña preparación para aprovechar mejor las tres horas.</dd>
+      </dl>
+      
+      <p class="files"><a href="preview/04-preparate.html" target="_blank">Abrir vista previa</a> · <a href="brevo/04-preparate.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/04-preparate.html" title="Prepárate para el taller" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">05</span><span class="tag tag-pedido">Pedido</span></div>
+      <h3>Enlace de acceso (24 horas antes)</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Viernes 27 de noviembre, 11:00 (Madrid).</dd>
+        <dt>A quién</dt><dd>Lista Inscritos. Quien compre después de esa hora lo recibe al momento (rama aparte en la automatización).</dd>
+        <dt>Asunto</dt><dd class="subject">Mañana nos vemos: aquí tienes tu enlace</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Mañana nos vemos: aquí tienes tu enlace</code></dd>
+        <dt>Texto de vista previa</dt><dd>Sábado 28, 11:00 (Madrid). Guarda este email.</dd>
+      </dl>
+      
+      <p class="files"><a href="preview/05-acceso-24h.html" target="_blank">Abrir vista previa</a> · <a href="brevo/05-acceso-24h.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/05-acceso-24h.html" title="Enlace de acceso (24 horas antes)" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">06</span><span class="tag tag-sugerido">Sugerido</span></div>
+      <h3>Empezamos en una hora</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Sábado 28 de noviembre, 10:00 (Madrid).</dd>
+        <dt>A quién</dt><dd>Lista Inscritos.</dd>
+        <dt>Asunto</dt><dd class="subject">Empezamos en una hora</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Empezamos en una hora</code></dd>
+        <dt>Texto de vista previa</dt><dd>Tu enlace al directo, por si lo necesitas a mano.</dd>
+      </dl>
+      
+      <p class="files"><a href="preview/06-empezamos-en-1-hora.html" target="_blank">Abrir vista previa</a> · <a href="brevo/06-empezamos-en-1-hora.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/06-empezamos-en-1-hora.html" title="Empezamos en una hora" loading="lazy"></iframe></div>
+  </article>
+</section>
+<section class="phase">
+  <h2>Después del taller</h2>
+  
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">07</span><span class="tag tag-sugerido">Sugerido</span></div>
+      <h3>Gracias + grabación</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Domingo 29 de noviembre, 10:00 (Madrid), o en cuanto la grabación esté subida.</dd>
+        <dt>A quién</dt><dd>Lista Inscritos (también quien no pudo asistir).</dd>
+        <dt>Asunto</dt><dd class="subject">Gracias por estar. Aquí tienes la grabación</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Gracias por estar. Aquí tienes la grabación</code></dd>
+        <dt>Texto de vista previa</dt><dd>Disponible hasta el 28 de diciembre.</dd>
+      </dl>
+      
+      <p class="files"><a href="preview/07-gracias-grabacion.html" target="_blank">Abrir vista previa</a> · <a href="brevo/07-gracias-grabacion.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/07-gracias-grabacion.html" title="Gracias + grabación" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">08</span><span class="tag tag-sugerido">Sugerido</span></div>
+      <h3>Últimos días de la grabación</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Miércoles 23 de diciembre, 10:00 (Madrid). 5 días antes de que caduque.</dd>
+        <dt>A quién</dt><dd>Lista Inscritos.</dd>
+        <dt>Asunto</dt><dd class="subject">Tu acceso a la grabación termina el 28 de diciembre</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Tu acceso a la grabación termina el 28 de diciembre</code></dd>
+        <dt>Texto de vista previa</dt><dd>Te quedan cinco días para volver a verla.</dd>
+      </dl>
+      
+      <p class="files"><a href="preview/08-ultimos-dias-grabacion.html" target="_blank">Abrir vista previa</a> · <a href="brevo/08-ultimos-dias-grabacion.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/08-ultimos-dias-grabacion.html" title="Últimos días de la grabación" loading="lazy"></iframe></div>
+  </article>
+</section></main>
+<script>
+document.querySelectorAll('[data-view]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.body.classList.toggle('mobile', b.dataset.view === 'mobile');
+    document.querySelectorAll('[data-view]').forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+  });
+});
+</script>
+</body></html>

@@ -264,3 +264,9 @@ body .sticky-cta a.button{background:var(--pink);padding:12px 16px;font-size:13p
   .hero-photo{margin-bottom:24px}
   .about img.portrait{box-shadow:-12px 12px 0 var(--pink)}
 }
+
+/* Plazas limitadas (solo si hay un límite real fijado en Stripe). */
+.price-card .limited-line{font-size:13px;line-height:1.6;color:var(--muted);margin:16px 0 0}
+.price-card .limited-line strong{color:var(--pink-ink)}
+.facts li:nth-child(4):before{background:var(--pink-ink)}
+@media(max-width:600px){.topline .tl-limit{display:none}}

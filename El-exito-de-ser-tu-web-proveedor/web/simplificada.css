@@ -84,3 +84,8 @@
   .thanks-steps li{padding-left:56px}
   .thanks-steps li:before{font-size:32px}
 }
+
+/* Plazas limitadas (solo si hay un límite real fijado en Stripe). */
+.limited-line{font-size:13px;line-height:1.6;margin:20px 0 0;max-width:420px}
+.limited-line strong{color:#a92e60}
+@media(max-width:600px){.topline .tl-limit{display:none}}
