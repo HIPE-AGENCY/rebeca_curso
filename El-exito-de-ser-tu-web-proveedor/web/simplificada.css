@@ -1,0 +1,53 @@
+/* Versión original simple: mismos colores y formas, menos elementos.
+   Se carga la última, después de taller.css, approved.css, dinamico.css y legal.css. */
+
+/* Franja superior: fecha corta en móvil para que quepa en una línea. */
+.topline .tl-short{display:none}
+@media(max-width:600px){.topline .tl-long{display:none}.topline .tl-short{display:inline}}
+
+/* Portada: la foto enmarcada por las formas rosa y turquesa, con su color natural (sin fundido). */
+.hero-art .hero-photo{position:relative;z-index:1;display:block;width:86%;height:88%;margin:5% 0 0 7%;object-fit:cover;object-position:50% 10%;mix-blend-mode:normal;clip-path:none}
+.photo-label{z-index:2}
+
+/* Un solo estilo de botón: el verde lima de la portada. */
+.enroll-button{background:var(--lime)!important;color:var(--ink)!important}
+
+/* Programa: números en un solo color y los tiempos en una línea de texto. */
+.session .number,.session:nth-of-type(3) .number,.session:nth-of-type(4) .number{color:#a92e60}
+.timing-line{font-size:13px;line-height:1.7;max-width:none;margin:0;padding-top:22px;border-top:1px solid #111b2630}
+
+/* Fondos lisos en lugar de degradados. */
+.program{background:var(--paper)}
+.approved-light{background:var(--paper)}
+
+/* Soy Rebeca: el libro en una línea. */
+.author-line{display:flex;gap:22px;align-items:center;margin-top:34px;padding-top:28px;border-top:1px solid #ffffff24}
+.author-line img{width:84px;height:auto;flex:none;box-shadow:4px 8px 20px #0004}
+.author-line p{margin:0;font-family:'Playfair Display',serif;font-size:clamp(24px,2.4vw,34px);line-height:1.15;color:#fff;max-width:none}
+.author-line em{color:var(--aqua)}
+.author-line span{display:block;font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.author-line small{display:block;font-family:'Poppins',sans-serif;font-size:13px;margin-top:8px;opacity:.85}
+
+/* Precio y fecha: un solo bloque compacto. */
+.enroll-simple{padding:80px 7vw 50px}
+.enroll-simple-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;margin-top:22px;padding:38px 0;border-top:1px solid #111b2620;border-bottom:1px solid #111b2620}
+.enroll-date-line{display:flex;align-items:flex-end;gap:18px}
+.enroll-simple .date-number{font-size:clamp(80px,8vw,118px);line-height:.85;margin:0}
+.enroll-simple .date-month{padding-bottom:4px}
+.enroll-hour{font-size:18px;line-height:1.5;margin:24px 0 12px;max-width:none}
+.enroll-hour strong{font-weight:600}
+.enroll-zones{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;line-height:1.6;margin:0;max-width:none}
+.enroll-simple .countdown{margin:0 0 28px}
+.enroll-simple .enroll-action{margin-top:0}
+.enroll-replay-line{font-size:13px;line-height:1.6;margin:22px 0 0;max-width:none}
+
+@media(max-width:850px){
+  .hero-art .hero-photo{object-fit:cover;object-position:50% 12%}
+}
+@media(max-width:750px){
+  .author-line img{width:70px}
+  .author-line p{font-size:26px}
+  .enroll-simple{padding:50px 6vw 34px}
+  .enroll-simple-grid{grid-template-columns:1fr;gap:34px;padding:30px 0}
+  .enroll-simple .date-number{font-size:88px}
+}

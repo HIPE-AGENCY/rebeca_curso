@@ -4,6 +4,9 @@ Rebeca Cáceres · Versión 21 publicada, exportada el 17 de octubre de 2026.
 CONTENIDO
 web/index.html: landing principal.
 web/3-horas.html: copia de la landing con URL alternativa.
+PROPUESTAS DE DISEÑO (no indexadas, pendientes de aprobación):
+web/version-original-simple.html: la original simplificada, mismos colores y formas con menos elementos (estilos en simplificada.css).
+web/version-simplificado-nuevo.html: diseño nuevo simplificado con inscripción por Stripe (inscripcion-pago.html, gracias.html, condiciones.html; estilos en simple.css).
 web/inscripcion.html: página de solicitud de inscripción.
 web/taller.css y web/approved.css: estilos de la landing y recursos compartidos.
 web/inscripcion.css y web/inscripcion.js: estilos y comportamiento de inscripción.
