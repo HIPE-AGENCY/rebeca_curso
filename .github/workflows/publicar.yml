@@ -1,12 +1,8 @@
-# Publica la landing en club.rebecacaceres.com (Hostalía) por FTP.
+# Publica la landing en https://club.rebecacaceres.com con GitHub Pages.
 # Se ejecuta en cada push a main que toque la web, o a mano desde la pestaña Actions.
-# Solo sube los archivos que han cambiado desde la última publicación.
+# Los borradores version-*.html no se publican.
 #
-# Secretos necesarios (Settings → Secrets and variables → Actions):
-#   FTP_SERVER    servidor FTP de Hostalía (p. ej. ftp.rebecacaceres.com)
-#   FTP_USERNAME  usuario FTP
-#   FTP_PASSWORD  contraseña FTP
-#   FTP_DIR       carpeta del subdominio en el servidor, terminada en / (p. ej. /club/)
+# DNS (Hostalía): registro CNAME  club → hipe-agency.github.io.
 
 name: Publicar landing
 
@@ -18,26 +14,34 @@ on:
       - '.github/workflows/publicar.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
-  group: publicar-landing
+  group: pages
   cancel-in-progress: false
 
 jobs:
   publicar:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Subir web/ por FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Preparar web/ sin borradores
+        run: |
+          rsync -a --exclude '.DS_Store' --exclude 'version-*.html' \
+            El-exito-de-ser-tu-web-proveedor/web/ _site/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_DIR }}
-          local-dir: ./El-exito-de-ser-tu-web-proveedor/web/
-          protocol: ftp
-          exclude: |
-            **/.DS_Store
-            CNAME
-            version-*.html
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
