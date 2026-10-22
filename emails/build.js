@@ -14,7 +14,7 @@ const CONFIG = {
   assetsPublic: 'https://elexitodesertu.rebecacaceres.com/assets/email/',
   assetsPreview: '../../El-exito-de-ser-tu-web-proveedor/web/assets/email/',
   // Página a la que vuelve quien no terminó la inscripción. Cambiar cuando se elija la versión de la landing.
-  inscripcion: 'https://elexitodesertu.rebecacaceres.com/inscripcion.html',
+  inscripcion: 'https://elexitodesertu.rebecacaceres.com/inscripcion',
   landing: 'https://elexitodesertu.rebecacaceres.com/',
   calendarioIcs: 'https://elexitodesertu.rebecacaceres.com/assets/el-exito-de-ser-tu.ics',
   // Pendientes: sustituir por los enlaces reales cuando existan.

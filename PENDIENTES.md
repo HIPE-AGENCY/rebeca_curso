@@ -44,7 +44,7 @@ Emails del flujo: `emails/index.html` (abrir en el navegador).
 - [ ] Al activar la cuenta real (el sandbox no deja hacerlo antes): datos de la empresa (NIF, dirección, IBAN), datos públicos (nombre `Rebeca Cáceres`, web, `hola@rebecacaceres.com`, `+34 626 517 781`), descriptor `REBECA CACERES`. Repetir en real la marca, los métodos de pago, los emails, el producto y el enlace. No tocar los datos personales del usuario (son del propietario de Tribeca).
 - [ ] Producto «El éxito de ser tú · Taller 28 nov 2026», 150 EUR.
 - [ ] Enlace de pago: recopilar nombre; factura si hace falta; códigos promocionales si los hay.
-- [ ] Después del pago, redirigir a `https://elexitodesertu.rebecacaceres.com/gracias.html?session_id={CHECKOUT_SESSION_ID}`.
+- [ ] Después del pago, redirigir a `https://elexitodesertu.rebecacaceres.com/gracias?session_id={CHECKOUT_SESSION_ID}`.
 - [ ] Escenario A: limitar el número de pagos. Escenario B: desactivar el enlace el **viernes 27 a las 23:59**.
 - [ ] Pasar el enlace de prueba y, después, el real.
 

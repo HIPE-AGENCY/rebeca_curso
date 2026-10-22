@@ -187,7 +187,7 @@ var RC_ANALITICA = {
       '<p class="cookie-title">Cookies</p>' +
       '<p>Usamos cookies de terceros (' + tools.join(', ') + ') para saber cómo se usa esta página' +
       (hasMarketing ? ' y medir nuestras campañas' : '') + '. Solo se activan si las aceptas. ' +
-      '<a href="cookies.html">Política de cookies</a>.</p>' +
+      '<a href="cookies">Política de cookies</a>.</p>' +
       '<div class="cookie-options" hidden>' +
         (hasAnalytics ? '<label><input type="checkbox" name="analytics"> <span><strong>Analíticas</strong> Visitas, origen, recorrido y mapas de calor.</span></label>' : '') +
         (hasMarketing ? '<label><input type="checkbox" name="marketing"> <span><strong>Publicidad</strong> Medir las campañas de Meta (Instagram y Facebook).</span></label>' : '') +
