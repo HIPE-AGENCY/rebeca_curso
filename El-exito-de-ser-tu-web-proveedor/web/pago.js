@@ -5,7 +5,7 @@ var RC_PAGO = {
   // action del formulario HTML. Tiene la forma https://xxxx.sibforms.com/serve/MUIF...
   brevoFormUrl: '',
   // Stripe → Enlaces de pago → (enlace del taller) → copiar URL. Tiene la forma https://buy.stripe.com/xxxx
-  stripePaymentLink: ''
+  stripePaymentLink: 'https://buy.stripe.com/test_8x2eVd8zL22h8TAcdxe7m00'
 };
 
 (function (config) {

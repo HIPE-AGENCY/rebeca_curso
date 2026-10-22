@@ -11,12 +11,12 @@ const path = require('path');
 
 const CONFIG = {
   // Dónde estarán publicadas las imágenes de los emails (carpeta web/assets/email/).
-  assetsPublic: 'https://club.rebecacaceres.com/assets/email/',
+  assetsPublic: 'https://elexitodesertu.rebecacaceres.com/assets/email/',
   assetsPreview: '../../El-exito-de-ser-tu-web-proveedor/web/assets/email/',
   // Página a la que vuelve quien no terminó la inscripción. Cambiar cuando se elija la versión de la landing.
-  inscripcion: 'https://club.rebecacaceres.com/inscripcion.html',
-  landing: 'https://club.rebecacaceres.com/',
-  calendarioIcs: 'https://club.rebecacaceres.com/assets/el-exito-de-ser-tu.ics',
+  inscripcion: 'https://elexitodesertu.rebecacaceres.com/inscripcion.html',
+  landing: 'https://elexitodesertu.rebecacaceres.com/',
+  calendarioIcs: 'https://elexitodesertu.rebecacaceres.com/assets/el-exito-de-ser-tu.ics',
   // Pendientes: sustituir por los enlaces reales cuando existan.
   enlaceDirecto: 'https://ENLACE-DEL-DIRECTO-PENDIENTE',
   enlaceGrabacion: 'https://ENLACE-DE-LA-GRABACION-PENDIENTE',
@@ -28,7 +28,7 @@ const CONFIG = {
   // Atributo de Brevo con el nombre: FIRSTNAME o NOMBRE, según la cuenta.
   atributoNombre: 'FIRSTNAME',
   nombreEjemplo: 'Ana',
-  remitente: 'Rebeca Cáceres <hola@rebecacaceres.com>'
+  remitente: 'Rebeca Cáceres <elexitodesertu@rebecacaceres.com>'
 };
 
 const C = { ink: '#111b26', paper: '#f9f7f3', pink: '#ff609f', pinkInk: '#a92e60', aqua: '#61dfcf', tealInk: '#167c73', lime: '#d4f46c', muted: '#4d5660', line: '#e6e1d8' };
@@ -41,7 +41,7 @@ const OUTLOOK_CAL = 'https://outlook.live.com/calendar/0/action/compose?subject=
 /* ---------- Piezas de la plantilla (tablas y estilos en línea, para Gmail y Outlook) ---------- */
 
 function utm(url, id) {
-  if (!/^https:\/\/club\.rebecacaceres\.com/.test(url)) return url;
+  if (!/^https:\/\/elexitodesertu\.rebecacaceres\.com/.test(url)) return url;
   const sep = url.includes('?') ? '&' : '?';
   const [base, hash] = url.split('#');
   return `${base}${sep}utm_source=brevo&utm_medium=email&utm_campaign=el-exito-2026&utm_content=${id}${hash ? '#' + hash : ''}`;
@@ -133,7 +133,7 @@ function layout({ preheader, accent, body, assets, motivo }) {
   <tr><td class="pad" style="padding:22px 48px 26px;background:${C.paper};border-top:1px solid ${C.line}">
     <p style="margin:0 0 8px;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">${motivo}</p>
     <p style="margin:0 0 8px;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Un programa educativo basado en la investigación psicológica y la experiencia clínica. No es terapia ni sustituye la atención de un profesional de la salud mental.</p>
-    <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Rebeca Cáceres · C/ Fuencarral, 105, 28004 Madrid · <a href="mailto:hola@rebecacaceres.com" style="color:${C.muted}">hola@rebecacaceres.com</a> · <a href="{{ unsubscribe }}" style="color:${C.muted}">Darme de baja</a></p>
+    <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Rebeca Cáceres · C/ Fuencarral, 105, 28004 Madrid · <a href="mailto:elexitodesertu@rebecacaceres.com" style="color:${C.muted}">elexitodesertu@rebecacaceres.com</a> · <a href="{{ unsubscribe }}" style="color:${C.muted}">Darme de baja</a></p>
   </td></tr>
 </table>
 </td></tr>

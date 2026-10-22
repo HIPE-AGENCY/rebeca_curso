@@ -44,3 +44,7 @@ nav.legal-links a,nav.legal-links button{display:inline;color:inherit;text-decor
 .legal-updated{font-size:12px!important;opacity:.7}
 [data-cookie-settings][hidden]{display:none!important}
 .legal-main td:first-child{white-space:nowrap}
+
+/* Borrador de condiciones: partes pendientes de decidir. */
+.draft-banner{background:#ffe1ec;color:#8a1745;font-size:13px!important;line-height:1.6;padding:14px 18px;margin:0 0 30px}
+.pending{background:#ffe1ec;color:#8a1745;font-size:13px;font-weight:600;padding:2px 6px}

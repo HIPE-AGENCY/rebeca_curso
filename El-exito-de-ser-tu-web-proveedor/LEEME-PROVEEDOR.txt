@@ -3,28 +3,28 @@ Rebeca Cáceres · Versión 21 publicada, exportada el 17 de octubre de 2026.
 
 CONTENIDO
 web/index.html: landing principal.
-PROPUESTAS DE DISEÑO (no indexadas, pendientes de aprobación):
-web/version-original-simple.html: la original simplificada, mismos colores y formas con menos elementos, con inscripción por Stripe (inscripcion-original-simple.html, gracias-original-simple.html; estilos en simplificada.css).
-web/version-simplificado-nuevo.html: diseño nuevo simplificado con inscripción por Stripe (inscripcion-pago.html, gracias.html; estilos en simple.css).
-Las dos propuestas comparten pago.js (Brevo y Stripe), analitica.js y condiciones.html. Stripe solo admite una página de vuelta por enlace de pago: apuntarla al gracias de la versión elegida.
-web/inscripcion.html: página de solicitud de inscripción.
-web/taller.css y web/approved.css: estilos de la landing y recursos compartidos.
-web/inscripcion.css y web/inscripcion.js: estilos y comportamiento de inscripción.
-web/assets/: fotos, portada, logotipo, firma y recursos gráficos.
+web/inscripcion.html: inscripción con pago. El formulario guarda el contacto en Brevo (lista Interesados) y abre Stripe con el email ya escrito (pago.js).
+web/gracias.html: página de vuelta tras pagar en Stripe; registra la compra en la medición.
+web/condiciones.html: condiciones de contratación (borrador con partes pendientes). web/cookies.html: política de cookies.
+web/taller.css, web/approved.css, web/inscripcion.css, web/legal.css, web/simplificada.css: estilos.
+web/analitica.js, web/dinamico.js: medición con banner de cookies; animaciones, cuenta atrás y botón fijo en móvil.
+web/assets/: fotos, portada, logotipo, firma, imágenes de los emails (assets/email/) y calendario (.ics).
+index.html combina la portada y «Soy Rebeca» de la original con los bloques centrales y el bloque final simplificados (estilos en simplificada.css). El botón «Más sobre mí» apunta provisionalmente a rebecacaceres.com.
 
 INSTALACIÓN
 Publicar el contenido de web/ en el directorio o subdirectorio elegido del alojamiento. Conservar nombres y rutas relativas. Es una web estática HTML/CSS/JavaScript: no necesita compilación, base de datos ni Node.js en producción. No sustituir una web existente sin acordar antes la ruta de publicación.
 
 TIPOGRAFÍAS
-Playfair Display y Poppins se cargan desde Google Fonts mediante taller.css; necesitan conexión a Internet. La imagen de la firma utiliza el recurso assets/firma-mask.svg.
+Playfair Display y Poppins se sirven desde web/fonts/ (no se cargan desde Google Fonts). La imagen de la firma utiliza el recurso assets/firma-mask.svg.
 
 INSCRIPCIÓN Y PAGOS
-Los cinco botones Me apunto llevan a inscripcion.html.
-El formulario NO almacena datos ni envía mensajes automáticamente. Abre WhatsApp con una solicitud preparada al +34 626 517 781, o el cliente de correo hacia hola@rebecacaceres.com. El visitante debe enviar el mensaje.
-Esta versión NO incluye Stripe ni otro cobro online, confirmación automática de plaza, envío de acceso al directo ni plataforma de grabaciones. Si se incorpora un enlace de pago, revisar el formulario y los textos de confirmación para que reflejen el proceso real.
+Los botones Me apunto llevan a inscripcion.html.
+El formulario pide nombre, email, aceptación de condiciones y newsletter (opcional). Al enviarlo, guarda el contacto en Brevo y abre el enlace de pago de Stripe. Configurar ambas direcciones al principio de web/pago.js.
+Stripe devuelve a gracias.html: en el enlace de pago, «Después del pago» → https://elexitodesertu.rebecacaceres.com/gracias.html?session_id={CHECKOUT_SESSION_ID}
+Los emails de confirmación, acceso y grabación salen de Brevo (carpeta emails/ del repositorio).
 
 PUBLICACIÓN Y COMPROBACIONES
-Revisar la visualización en móvil y escritorio, enlaces, fuentes, firma y funcionamiento de WhatsApp/correo en el alojamiento definitivo. Incorporar los avisos legales y de privacidad aplicables al sitio del titular antes de ponerlo en explotación. No se incluyen credenciales, repositorio Git ni configuración del alojamiento original.
+Revisar la visualización en móvil y escritorio, enlaces, fuentes, firma y funcionamiento del formulario, Stripe y la página de gracias en el alojamiento definitivo. Incorporar los avisos legales y de privacidad aplicables al sitio del titular antes de ponerlo en explotación. No se incluyen credenciales, repositorio Git ni configuración del alojamiento original.
 
 DATOS DEL TALLER
 28 de noviembre de 2026, 11:00–14:00 Madrid. Inversión: 150 €.
@@ -35,7 +35,7 @@ REVISIÓN (18 de octubre de 2026)
 web/dinamico.css y web/dinamico.js: animaciones de entrada y al hacer scroll (desactivadas si el sistema pide reducir movimiento), cuenta atrás hasta el 28/11/2026 11:00 Madrid y botón "Me apunto" fijo en móvil.
 Imágenes servidas en WebP a su tamaño de uso (assets/*.webp). Los JPG/PNG originales se conservan en assets/.
 Nuevos: assets/favicon-32.png, assets/apple-touch-icon.png y assets/og-el-exito-de-ser-tu.jpg (imagen al compartir el enlace, 1200×630).
-URL de publicación: https://club.rebecacaceres.com/ (subdominio en GitHub Pages; la landing va en la raíz y se reutiliza en próximas campañas). El canonical y el Open Graph ya apuntan ahí. web/CNAME contiene el dominio para GitHub Pages. DNS: registro CNAME "club" → <usuario>.github.io. Si cambia el dominio, actualizar web/CNAME y esas etiquetas en index.html e inscripcion.html.
+URL de publicación: https://elexitodesertu.rebecacaceres.com/ (subdominio en GitHub Pages; la landing va en la raíz y se reutiliza en próximas campañas). El canonical y el Open Graph ya apuntan ahí. web/CNAME contiene el dominio para GitHub Pages. DNS: registro CNAME "elexitodesertu" → <usuario>.github.io. Si cambia el dominio, actualizar web/CNAME y esas etiquetas en index.html e inscripcion.html.
 Tipografías alojadas en web/fonts/ (ya no se cargan desde Google Fonts).
 
 LEGAL Y COOKIES

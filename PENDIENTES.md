@@ -18,7 +18,7 @@ Emails del flujo: `emails/index.html` (abrir en el navegador).
 
 - [ ] Cuenta creada con email y datos de Rebeca. Revisar el plan: el gratuito solo envía 300 emails al día.
 - [ ] Dominio `rebecacaceres.com` autenticado (registros DNS en Hostalia, sección 3).
-- [ ] Remitente `hola@rebecacaceres.com` verificado.
+- [ ] Buzón `elexitodesertu@rebecacaceres.com` creado (en el correo del dominio) y verificado en Brevo como remitente de los emails y la newsletter.
 - [ ] Newsletter migrada desde la cuenta de Hipe: exportar contactos con atributos **y las bajas**; importar las bajas como bajas.
 - [ ] Formulario de newsletter de su web actual apuntando a la cuenta nueva.
 - [ ] Listas: Newsletter, Taller 28-11-2026 · Interesados, Taller 28-11-2026 · Inscritos, Pruebas.
@@ -33,15 +33,18 @@ Emails del flujo: `emails/index.html` (abrir en el navegador).
 
 - [ ] Registros de Brevo (verificación, DKIM, DMARC). Si ya hay un `_dmarc`, no duplicarlo.
 - [ ] Registro TXT de verificación de dominio de Meta.
-- [ ] Al publicar: `club` → CNAME `hipe-agency.github.io.` (GitHub Pages) y activar HTTPS en GitHub.
+- [ ] Al publicar: `elexitodesertu` → CNAME `hipe-agency.github.io.` (GitHub Pages) y activar HTTPS en GitHub.
 
 ## 4. Stripe
 
-- [ ] Todo primero en **modo de prueba**.
-- [ ] Marca (logo, color `#ff609f`), métodos de pago (tarjeta, Apple Pay, Google Pay), recibos activados.
+- [x] Cuenta «Rebeca Cáceres · España» creada en la organización de Tribeca (el país no se puede cambiar; si factura la empresa de EE. UU., crear otra cuenta con país Estados Unidos).
+- [ ] Todo primero en el **entorno de pruebas** (sandbox) de esa cuenta.
+- [x] Marca en pruebas: logo, color de marca `#111B26`, color de énfasis `#D4F46C`. Página de pago alojada en Stripe, sin dominio propio.
+- [ ] Métodos de pago (tarjeta, Apple Pay, Google Pay) y recibos activados (Emails a clientes → Pagos correctos).
+- [ ] Al activar la cuenta real (el sandbox no deja hacerlo antes): datos de la empresa (NIF, dirección, IBAN), datos públicos (nombre `Rebeca Cáceres`, web, `hola@rebecacaceres.com`, `+34 626 517 781`), descriptor `REBECA CACERES`. Repetir en real la marca, los métodos de pago, los emails, el producto y el enlace. No tocar los datos personales del usuario (son del propietario de Tribeca).
 - [ ] Producto «El éxito de ser tú · Taller 28 nov 2026», 150 EUR.
 - [ ] Enlace de pago: recopilar nombre; factura si hace falta; códigos promocionales si los hay.
-- [ ] Después del pago, redirigir a `https://club.rebecacaceres.com/<gracias de la versión elegida>?session_id={CHECKOUT_SESSION_ID}`.
+- [ ] Después del pago, redirigir a `https://elexitodesertu.rebecacaceres.com/gracias.html?session_id={CHECKOUT_SESSION_ID}`.
 - [ ] Escenario A: limitar el número de pagos. Escenario B: desactivar el enlace el **viernes 27 a las 23:59**.
 - [ ] Pasar el enlace de prueba y, después, el real.
 
@@ -74,18 +77,27 @@ Emails del flujo: `emails/index.html` (abrir en el navegador).
 
 ## 9. Decisiones de Rebeca
 
-- [ ] Versión de la landing: **original simple** o **simplificado nuevo**.
+- [ ] Destino del botón «Más sobre mí» (ahora apunta provisionalmente a rebecacaceres.com).
 - [ ] Escenario de urgencia: **A** (límite real de plazas, ¿cuántas?) o **B** (cierre de inscripciones el viernes 27 a las 23:59).
 - [ ] Condiciones: reembolsos, no asistencia, cancelación o cambio de fecha, IVA, quién factura (ella o la empresa de EE. UU.).
 - [ ] Plataforma del directo (Zoom, Meet…) y dónde se aloja la grabación.
 - [ ] Testimonios para la web.
 - [ ] Horarios para América (¿añadir México o Argentina?).
+- [ ] Confirmar la configuración de Stripe:
+  - ¿Los 150 € son **con IVA incluido** o hay que sumarle el IVA? (Decidirlo con su gestor; el impuesto automático de Stripe está desactivado.)
+  - ¿Le parece bien la cuenta «Rebeca Cáceres · España» o factura la empresa de EE. UU.?
+  - Botón de la página de pago: «Pagar» (alternativa: «Reservar»).
+  - Datos que pide el pago: solo nombre y email. Sin dirección, teléfono, empresa ni NIF. ¿Necesita factura con sus datos? Si es así, hay que activar dirección y NIF.
+  - Métodos de pago: tarjeta, Apple Pay y Google Pay.
+  - Colores del pago: azul `#111B26` y lima `#D4F46C`.
+  - Nombre en el extracto bancario del cliente: `REBECA CACERES`.
+- [ ] Black Friday (viernes 27, último día de inscripción): porcentaje (¿30 %?), fechas (solo el 27 o la semana del 23 al 27), código (`BLACKFRIDAY`) y si hay límite de usos. En Stripe: cupón + código promocional; activar «Permitir códigos promocionales» en el enlace solo durante la oferta. En la web: `prefilled_promo_code`, precio tachado y valor de compra en `analitica.js`.
 - [ ] Ventaja para su comunidad en el email 00 (acceso anticipado o precio especial), si la quiere.
 - [ ] Qué pasa con la web después del taller.
 
 ## 10. Lo que hay que pasarme para terminar la web y los emails
 
-- [ ] Enlace de pago de Stripe.
+- [ ] Enlace de pago de Stripe. El de prueba ya está en `pago.js` (`test_8x2eVd8zL22h8TAcdxe7m00`); falta el real.
 - [ ] URL del formulario de Brevo.
 - [ ] Nombre del atributo del nombre (`NOMBRE` o `FIRSTNAME`).
 - [ ] ID del píxel de Meta.
@@ -99,7 +111,7 @@ Emails del flujo: `emails/index.html` (abrir en el navegador).
 - [ ] Quitar `noindex` de la landing elegida.
 - [ ] Ajustar `CONFIG.inscripcion` en `emails/build.js` y regenerar los emails.
 - [ ] Subir a `main` (publica automáticamente en GitHub Pages).
-- [ ] Comprobar `https://club.rebecacaceres.com` con HTTPS y la vista previa al compartir en WhatsApp.
+- [ ] Comprobar `https://elexitodesertu.rebecacaceres.com` con HTTPS y la vista previa al compartir en WhatsApp.
 
 ## 12. Prueba completa antes de lanzar
 

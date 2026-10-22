@@ -1,16 +1,10 @@
-/* Versión original simple: mismos colores y formas, menos elementos.
-   Se carga la última, después de taller.css, approved.css, dinamico.css y legal.css. */
+/* Ajustes sobre la landing original: menos repeticiones en los bloques centrales y bloque final compacto.
+   Se carga la última, después de taller.css, approved.css, dinamico.css y legal.css.
+   La portada y «Soy Rebeca» se mantienen como en la original. */
 
 /* Franja superior: fecha corta en móvil para que quepa en una línea. */
 .topline .tl-short{display:none}
 @media(max-width:600px){.topline .tl-long{display:none}.topline .tl-short{display:inline}}
-
-/* Portada: la foto enmarcada por las formas rosa y turquesa, con su color natural (sin fundido). */
-.hero-art .hero-photo{position:relative;z-index:1;display:block;width:86%;height:88%;margin:5% 0 0 7%;object-fit:cover;object-position:50% 10%;mix-blend-mode:normal;clip-path:none}
-.photo-label{z-index:2}
-
-/* Un solo estilo de botón: el verde lima de la portada. */
-.enroll-button{background:var(--lime)!important;color:var(--ink)!important}
 
 /* Programa: números en un solo color y los tiempos en una línea de texto. */
 .session .number,.session:nth-of-type(3) .number,.session:nth-of-type(4) .number{color:#a92e60}
@@ -20,15 +14,11 @@
 .program{background:var(--paper)}
 .approved-light{background:var(--paper)}
 
-/* Soy Rebeca: el libro en una línea. */
-.author-line{display:flex;gap:22px;align-items:center;margin-top:34px;padding-top:28px;border-top:1px solid #ffffff24}
-.author-line img{width:84px;height:auto;flex:none;box-shadow:4px 8px 20px #0004}
-.author-line p{margin:0;font-family:'Playfair Display',serif;font-size:clamp(24px,2.4vw,34px);line-height:1.15;color:#fff;max-width:none}
-.author-line em{color:var(--aqua)}
-.author-line span{display:block;font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
-.author-line small{display:block;font-family:'Poppins',sans-serif;font-size:13px;margin-top:8px;opacity:.85}
+/* Soy Rebeca: botón «Más sobre mí». */
+.about-more{margin-top:30px}
 
-/* Precio y fecha: un solo bloque compacto. */
+/* Tu próxima cita contigo: un solo bloque compacto. */
+.enroll-button{background:var(--lime)!important;color:var(--ink)!important}
 .enroll-simple{padding:80px 7vw 50px}
 .enroll-simple-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;margin-top:22px;padding:38px 0;border-top:1px solid #111b2620;border-bottom:1px solid #111b2620}
 .enroll-date-line{display:flex;align-items:flex-end;gap:18px}
@@ -40,13 +30,9 @@
 .enroll-simple .countdown{margin:0 0 28px}
 .enroll-simple .enroll-action{margin-top:0}
 .enroll-replay-line{font-size:13px;line-height:1.6;margin:22px 0 0;max-width:none}
-
-@media(max-width:850px){
-  .hero-art .hero-photo{object-fit:cover;object-position:50% 12%}
-}
+.limited-line{font-size:13px;line-height:1.6;margin:20px 0 0;max-width:420px}
+.limited-line strong{color:#a92e60}
 @media(max-width:750px){
-  .author-line img{width:70px}
-  .author-line p{font-size:26px}
   .enroll-simple{padding:50px 6vw 34px}
   .enroll-simple-grid{grid-template-columns:1fr;gap:34px;padding:30px 0}
   .enroll-simple .date-number{font-size:88px}
@@ -85,7 +71,20 @@
   .thanks-steps li:before{font-size:32px}
 }
 
-/* Plazas limitadas (solo si hay un límite real fijado en Stripe). */
-.limited-line{font-size:13px;line-height:1.6;margin:20px 0 0;max-width:420px}
-.limited-line strong{color:#a92e60}
-@media(max-width:600px){.topline .tl-limit{display:none}}
+/* Soy Rebeca: la sección cabe en una pantalla de ordenador y el libro enlaza a Amazon. */
+@media(min-width:751px){
+  .about-approved{padding-top:40px;align-items:end}
+  /* La foto (1024×1535) no supera la altura visible bajo la cabecera fija. */
+  .approved-portrait{width:100%;max-width:calc((100vh - 150px) * .667);justify-self:center}
+  .approved-bio{padding-bottom:40px}
+  .workshop-explanation{font-size:clamp(17px,1.5vw,21px);line-height:1.55;margin:20px 0 26px}
+  .approved-author{grid-template-columns:minmax(0,1fr) 22%;gap:24px}
+  .approved-author h3{font-size:clamp(28px,2.8vw,42px);margin-bottom:10px}
+  .approved-author h3 .author-inline-label{margin-bottom:8px}
+  .about-more{margin-top:24px}
+}
+.approved-author .book-cover{display:block}
+.approved-author .book-cover img{width:100%;height:auto;display:block;box-shadow:4px 8px 20px #0004;transition:transform .2s}
+.approved-author .book-cover:hover img{transform:translateY(-3px)}
+.book-buy{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--aqua);text-decoration:none;border-bottom:1px solid #61dfcf80}
+.book-buy:hover{border-bottom-color:var(--aqua)}

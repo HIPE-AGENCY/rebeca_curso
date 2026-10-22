@@ -1,8 +1,8 @@
-# Publica la landing en https://club.rebecacaceres.com con GitHub Pages.
+# Publica la landing en https://elexitodesertu.rebecacaceres.com con GitHub Pages.
 # Se ejecuta en cada push a main que toque la web, o a mano desde la pestaña Actions.
 # Los borradores version-*.html no se publican.
 #
-# DNS (Hostalía): registro CNAME  club → hipe-agency.github.io.
+# DNS (Hostalía): registro CNAME  elexitodesertu → hipe-agency.github.io.
 
 name: Publicar landing
 
