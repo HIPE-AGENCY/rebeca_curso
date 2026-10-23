@@ -88,3 +88,6 @@
 .approved-author .book-cover:hover img{transform:translateY(-3px)}
 .book-buy{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--aqua);text-decoration:none;border-bottom:1px solid #61dfcf80}
 .book-buy:hover{border-bottom-color:var(--aqua)}
+
+.registration-page .check-soft span{color:#5f6670}
+.registration-page .registration-submit .arrow{flex:none}

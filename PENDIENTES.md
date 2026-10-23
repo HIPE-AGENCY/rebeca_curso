@@ -45,7 +45,7 @@ Detalle paso a paso de cada herramienta: [documento de ajustes](https://claude.a
 
 ## 3. Make (Stripe → Brevo)
 
-- [ ] Stripe «Watch Events» `checkout.session.completed` → filtro `payment_status = paid` → Brevo «Create or Update a Contact» en Inscritos.
+- [ ] Stripe «Watch Events» `checkout.session.completed` → filtro `payment_status = paid` **o** `no_payment_required` (los códigos gratuitos llegan con este último) → Brevo «Create or Update a Contact» en Inscritos.
 - [ ] Rama para pagos después del **viernes 27 a las 11:00** → Brevo «Send a transactional email» con la plantilla 05.
 - [ ] Probar con un pago de prueba: el contacto entra en Inscritos y llega la confirmación.
 
@@ -53,6 +53,8 @@ Detalle paso a paso de cada herramienta: [documento de ajustes](https://claude.a
 
 - [ ] Activar la cuenta con sus datos fiscales y su cuenta bancaria.
 - [ ] Recrear en modo real el producto (150 EUR) y el enlace de pago, con la misma configuración y la vuelta a `/gracias?session_id={CHECKOUT_SESSION_ID}`.
+- [ ] Enlace de pago: activar «Permitir códigos promocionales».
+- [ ] Acceso gratuito (Manuel, Yorat…): Stripe → Catálogo de productos → Cupones → cupón 100 % de descuento, «Una vez» → un código promocional por persona (máx. 1 canje). Lo escriben en la página de pago de Stripe; no pide tarjeta.
 - [ ] Escenario A: limitar el número de pagos. Escenario B: desactivar el enlace el **viernes 27 a las 23:59**.
 - [ ] **Sustituir en `web/pago.js` el enlace `buy.stripe.com/test_…` por el real** (o pasármelo).
 - [ ] Compra real de 150 € y reembolso desde Stripe.
