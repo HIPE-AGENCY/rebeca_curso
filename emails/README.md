@@ -8,7 +8,7 @@ Nueve emails para Brevo, desde el anuncio a la comunidad hasta el cierre de la g
 
 ## Antes de activarlos
 
-1. Sustituir en `CONFIG` (al principio de `build.js`) los enlaces pendientes: directo, grabación y encuesta, y el número de plazas.
+1. Sustituir en `CONFIG` (al principio de `build.js`) los enlaces pendientes: directo, grabación, encuesta y página de la newsletter.
 2. Comprobar el nombre del atributo del nombre en Brevo (`FIRSTNAME` o `NOMBRE`) y ajustarlo en `CONFIG.atributoNombre`.
 3. Cambiar `CONFIG.inscripcion` a la página de inscripción de la versión elegida de la landing.
 4. Publicar la web: las imágenes de los emails se cargan desde `https://elexitodesertu.rebecacaceres.com/assets/email/`.

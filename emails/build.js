@@ -4,7 +4,7 @@
      emails/brevo/*.html    → HTML listo para pegar en Brevo (imágenes con URL pública y variables de Brevo)
      emails/preview/*.html  → el mismo email con imágenes locales y un nombre de ejemplo, para revisarlo
      emails/index.html      → vista previa de todo el flujo
-   Todo lo que cambia entre versiones (enlaces, plazas, nombre del atributo) está en CONFIG. */
+   Todo lo que cambia entre versiones (enlaces, nombre del atributo) está en CONFIG. */
 
 const fs = require('fs');
 const path = require('path');
@@ -23,7 +23,6 @@ const CONFIG = {
   enlaceEncuesta: 'https://ENLACE-DE-LA-ENCUESTA-PENDIENTE',
   // Página de rebecacaceres.com donde se apunta a la newsletter.
   enlaceNewsletter: 'https://ENLACE-DE-LA-NEWSLETTER-PENDIENTE',
-  plazas: '[N]',
   // Escenario A: hay un límite de plazas real fijado en Stripe. Escenario B: no hay límite; la urgencia es la fecha de cierre.
   escenario: 'B',
   cierreInscripciones: 'el viernes 27 de noviembre a las 23:59 (hora de Madrid)',
@@ -213,28 +212,6 @@ ${infoBox([...DATOS_TALLER.slice(0, 2), ['Inversión', '150 €']])}
 ${p('Si tienes alguna duda, o necesitas ayuda para completar el pago, respóndeme a este email y te contesto yo.')}
 ${small('Si ya completaste la inscripción con otro email, ignora este mensaje: tu plaza está confirmada.')}
 ${signature(x.assets, 'Te veo dentro,')}`
-  },
-  {
-    id: '02-quedan-pocas-plazas', fase: 'Antes de comprar', estado: 'Pedido', escenario: 'A · con límite real',
-    nombre: 'Quedan pocas plazas',
-    cuando: 'Envío manual cuando queden 10 plazas o menos del límite fijado en Stripe.',
-    quien: 'Lista de newsletter, excluyendo la lista Inscritos.',
-    asunto: `Quedan ${CONFIG.plazas} plazas para el 28 de noviembre`,
-    preheader: 'El grupo es reducido para poder trabajar sobre tu situación real.',
-    accent: C.tealInk, motivo: MOTIVO_NEWSLETTER,
-    aviso: 'Requiere un límite de plazas real, fijado en Stripe («Limitar el número de pagos»). Sustituir [N] por las plazas que quedan de verdad el día del envío.',
-    body: (x) => `${h1(`Quedan ${CONFIG.plazas} plazas para el ${em('28 de noviembre.')}`)}
-${p(`${x.saludo}`)}
-${p('Te escribo porque el taller <strong>El éxito de ser tú</strong> está casi completo. Lo hago con un grupo reducido a propósito: en la tercera hora trabajamos sobre una situación real de cada persona, y eso necesita espacio.')}
-${p('En tres horas vamos a:')}
-${list([
-  '<strong>Revisar el éxito que aprendimos:</strong> las expectativas y las reglas con las que mides tu vida.',
-  '<strong>Mirar la vida que aplazamos:</strong> lo que sostienes, lo que dejas para después y otra forma de ver el fracaso.',
-  '<strong>Poner tu criterio en práctica:</strong> una decisión tuya y tu primer paso concreto.'
-], C.tealInk)}
-${button('Reservar mi plaza', utm(CONFIG.inscripcion, x.id))}
-${infoBox([...DATOS_TALLER, ['Inversión', '150 €']], C.tealInk)}
-${signature(x.assets, 'Me encantaría que estuvieras,')}`
   },
   {
     id: '02b-ultima-semana', fase: 'Antes de comprar', estado: 'Pedido', escenario: 'B · sin límite',
