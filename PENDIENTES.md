@@ -39,7 +39,8 @@ Detalle paso a paso de cada herramienta: [documento de ajustes](https://claude.a
 - [ ] Atributo `NEWSLETTER` (sí/no). Anotar si el del nombre es `NOMBRE` o `FIRSTNAME`.
 - [ ] Formulario de inscripción → lista Interesados; confirmación simple, sin captcha. **Pasarme la URL del `action`.**
 - [ ] Plantillas: una por email (`emails/brevo/`). La 05 también como transaccional.
-- [ ] Automatizaciones: carrito abandonado (una sola entrada por contacto), confirmación, alta en newsletter.
+- [ ] Automatizaciones: carrito abandonado a las 3 h (01) y último aviso a los 3 días (01b), ambos excluyendo Inscritos y sin enviarse tras el cierre; confirmación; alta en newsletter.
+- [ ] Invitación a la newsletter (09) el martes 1 de diciembre, solo a Inscritos que no están en Newsletter. Falta el enlace de la página de la newsletter de Rebeca.
 - [ ] Clave API para Make (pegarla solo en Make).
 - [ ] Probar cada email con la lista Pruebas.
 
@@ -90,7 +91,7 @@ Detalle paso a paso de cada herramienta: [documento de ajustes](https://claude.a
 - [ ] URL del formulario de Brevo y nombre del atributo del nombre.
 - [ ] Enlace de Stripe real.
 - [ ] ID del píxel de Meta.
-- [ ] Enlaces del directo, de la grabación y de la encuesta.
+- [ ] Enlaces del directo, de la grabación, de la encuesta y de la página de la newsletter.
 - [ ] Respuestas para las condiciones de contratación.
 
 ## 9. Antes de lanzar

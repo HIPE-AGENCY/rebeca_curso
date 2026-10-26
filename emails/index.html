@@ -35,7 +35,7 @@ body.mobile .frame{width:375px;height:720px}
 <body>
 <header>
   <h1>Flujo de emails · El éxito de ser tú</h1>
-  <p>11 emails, desde el anuncio a la comunidad hasta que se cierra la grabación. Los marcados «Pedido» son los que se pidieron; los «Sugerido», los que recomiendo añadir. Las vistas previas usan un nombre de ejemplo («Ana»); el HTML para Brevo lleva las variables reales.</p>
+  <p>13 emails, desde el anuncio a la comunidad hasta que se cierra la grabación. Los marcados «Pedido» son los que se pidieron; los «Sugerido», los que recomiendo añadir. Las vistas previas usan un nombre de ejemplo («Ana»); el HTML para Brevo lleva las variables reales.</p>
 </header>
 <div class="stripe"><span style="background:var(--pink)"></span><span style="background:var(--aqua)"></span><span style="background:var(--lime)"></span></div>
 <div class="toolbar">
@@ -82,6 +82,22 @@ body.mobile .frame{width:375px;height:720px}
       <p class="files"><a href="preview/01-carrito-abandonado.html" target="_blank">Abrir vista previa</a> · <a href="brevo/01-carrito-abandonado.html" target="_blank">HTML para Brevo</a></p>
     </div>
     <div class="frame"><iframe src="preview/01-carrito-abandonado.html" title="Carrito abandonado" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">01b</span><span class="tag tag-sugerido">Sugerido</span></div>
+      <h3>Último aviso de inscripción</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>3 días después de rellenar el formulario, si sigue sin pagar. No enviarlo si ya han cerrado las inscripciones.</dd>
+        <dt>A quién</dt><dd>Lista Interesados que NO están en Inscritos.</dd>
+        <dt>Asunto</dt><dd class="subject">Es el último mensaje que te escribo sobre esto</dd>
+        <dt>Asunto en Brevo</dt><dd><code>Es el último mensaje que te escribo sobre esto</code></dd>
+        <dt>Texto de vista previa</dt><dd>Por si se te pasó terminar tu inscripción.</dd>
+      </dl>
+      <p class="warn">Si la persona se apunta con menos de 3 días para el cierre, este email no debe salir: las inscripciones ya estarían cerradas.</p>
+      <p class="files"><a href="preview/01b-ultimo-aviso.html" target="_blank">Abrir vista previa</a> · <a href="brevo/01b-ultimo-aviso.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/01b-ultimo-aviso.html" title="Último aviso de inscripción" loading="lazy"></iframe></div>
   </article>
   <article class="email">
     <div class="meta">
@@ -234,6 +250,22 @@ body.mobile .frame{width:375px;height:720px}
       <p class="files"><a href="preview/08-ultimos-dias-grabacion.html" target="_blank">Abrir vista previa</a> · <a href="brevo/08-ultimos-dias-grabacion.html" target="_blank">HTML para Brevo</a></p>
     </div>
     <div class="frame"><iframe src="preview/08-ultimos-dias-grabacion.html" title="Últimos días de la grabación" loading="lazy"></iframe></div>
+  </article>
+  <article class="email">
+    <div class="meta">
+      <div class="tags"><span class="num">09</span><span class="tag tag-sugerido">Sugerido</span></div>
+      <h3>Invitación a la newsletter</h3>
+      <dl>
+        <dt>Cuándo</dt><dd>Martes 1 de diciembre, 10:00 (Madrid). Dos días después del taller.</dd>
+        <dt>A quién</dt><dd>Lista Inscritos que NO están en Newsletter.</dd>
+        <dt>Asunto</dt><dd class="subject">¿Seguimos en contacto?</dd>
+        <dt>Asunto en Brevo</dt><dd><code>¿Seguimos en contacto?</code></dd>
+        <dt>Texto de vista previa</dt><dd>Una invitación, solo una vez.</dd>
+      </dl>
+      <p class="warn">Es una invitación comercial a quien no ha dado su consentimiento para la newsletter: enviarla una sola vez, a quien asistió al taller, y revisar con la política de privacidad.</p>
+      <p class="files"><a href="preview/09-invitacion-newsletter.html" target="_blank">Abrir vista previa</a> · <a href="brevo/09-invitacion-newsletter.html" target="_blank">HTML para Brevo</a></p>
+    </div>
+    <div class="frame"><iframe src="preview/09-invitacion-newsletter.html" title="Invitación a la newsletter" loading="lazy"></iframe></div>
   </article>
 </section></main>
 <script>

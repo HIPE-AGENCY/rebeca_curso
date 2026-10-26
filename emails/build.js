@@ -21,6 +21,8 @@ const CONFIG = {
   enlaceDirecto: 'https://ENLACE-DEL-DIRECTO-PENDIENTE',
   enlaceGrabacion: 'https://ENLACE-DE-LA-GRABACION-PENDIENTE',
   enlaceEncuesta: 'https://ENLACE-DE-LA-ENCUESTA-PENDIENTE',
+  // Página de rebecacaceres.com donde se apunta a la newsletter.
+  enlaceNewsletter: 'https://ENLACE-DE-LA-NEWSLETTER-PENDIENTE',
   plazas: '[N]',
   // Escenario A: hay un límite de plazas real fijado en Stripe. Escenario B: no hay límite; la urgencia es la fecha de cierre.
   escenario: 'B',
@@ -193,6 +195,26 @@ ${small('Si ya completaste la inscripción con otro email, ignora este mensaje: 
 ${signature(x.assets, 'Un abrazo,')}`
   },
   {
+    id: '01b-ultimo-aviso', fase: 'Antes de comprar', estado: 'Sugerido',
+    nombre: 'Último aviso de inscripción',
+    cuando: '3 días después de rellenar el formulario, si sigue sin pagar. No enviarlo si ya han cerrado las inscripciones.',
+    quien: 'Lista Interesados que NO están en Inscritos.',
+    asunto: 'Es el último mensaje que te escribo sobre esto',
+    preheader: 'Por si se te pasó terminar tu inscripción.',
+    accent: C.pinkInk, motivo: MOTIVO_INTERESADO,
+    aviso: 'Si la persona se apunta con menos de 3 días para el cierre, este email no debe salir: las inscripciones ya estarían cerradas.',
+    body: (x) => `${h1(`Un último recordatorio, ${em('sin ninguna prisa.')}`)}
+${p(`${x.saludo}`)}
+${p('Te escribo solo una vez más y no insistiré: no quiero molestarte.')}
+${p('Es que me sabría muy mal que te perdieras el taller <strong>El éxito de ser tú</strong> por un despiste, por si ha pasado algo y no te acordabas de que no habías terminado tu inscripción.')}
+${p(CONFIG.escenario === 'A' ? 'Las plazas son limitadas para que el grupo sea reducido, y me daría pena que te quedaras sin la tuya.' : 'Las inscripciones se cierran el viernes 27 de noviembre a las 23:59 (hora de Madrid), y me daría pena que se te pasara.')}
+${button('Terminar mi inscripción', utm(CONFIG.inscripcion, x.id))}
+${infoBox([...DATOS_TALLER.slice(0, 2), ['Inversión', '150 €']])}
+${p('Si tienes alguna duda, o necesitas ayuda para completar el pago, respóndeme a este email y te contesto yo.')}
+${small('Si ya completaste la inscripción con otro email, ignora este mensaje: tu plaza está confirmada.')}
+${signature(x.assets, 'Te veo dentro,')}`
+  },
+  {
     id: '02-quedan-pocas-plazas', fase: 'Antes de comprar', estado: 'Pedido', escenario: 'A · con límite real',
     nombre: 'Quedan pocas plazas',
     cuando: 'Envío manual cuando queden 10 plazas o menos del límite fijado en Stripe.',
@@ -362,6 +384,23 @@ ${p('El lunes 28 de diciembre se cierra el acceso a la grabación de <strong>El 
 ${button('Ver la grabación', CONFIG.enlaceGrabacion)}
 ${p('Y si quieres seguir con estas ideas, en mi libro <strong>El éxito de ser tú</strong> (Aguilar) las desarrollo con más calma, y en la newsletter sigo compartiendo herramientas para la vida diaria.')}
 ${signature(x.assets, 'Gracias de nuevo por estar,')}`
+  },
+  {
+    id: '09-invitacion-newsletter', fase: 'Después del taller', estado: 'Sugerido',
+    nombre: 'Invitación a la newsletter',
+    cuando: 'Martes 1 de diciembre, 10:00 (Madrid). Dos días después del taller.',
+    quien: 'Lista Inscritos que NO están en Newsletter.',
+    asunto: '¿Seguimos en contacto?',
+    preheader: 'Una invitación, solo una vez.',
+    accent: C.tealInk, motivo: MOTIVO_INSCRITO,
+    aviso: 'Es una invitación comercial a quien no ha dado su consentimiento para la newsletter: enviarla una sola vez, a quien asistió al taller, y revisar con la política de privacidad.',
+    body: (x) => `${h1(`Si quieres, ${em('seguimos en contacto.')}`)}
+${p(`${x.saludo}`)}
+${p('Gracias otra vez por haber estado en el taller.')}
+${p('Si te ha servido, en mi newsletter comparto herramientas y reflexiones para llevar estas ideas a la vida diaria, sin agobiar. Si te apetece recibirla, puedes apuntarte aquí:')}
+${button('Apuntarme a la newsletter', CONFIG.enlaceNewsletter, { color: C.aqua })}
+${small('Es solo una invitación. Si no te apuntas, no te escribiré más sobre esto, y seguirás recibiendo lo que queda del taller, como el acceso a la grabación.')}
+${signature(x.assets, 'Con cariño,')}`
   }
 ];
 
