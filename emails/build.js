@@ -26,7 +26,7 @@ const CONFIG = {
   escenario: 'B',
   cierreInscripciones: 'el viernes 27 de noviembre a las 23:59 (hora de Madrid)',
   // Atributo de Brevo con el nombre: FIRSTNAME o NOMBRE, según la cuenta.
-  atributoNombre: 'FIRSTNAME',
+  atributoNombre: 'NOMBRE',
   nombreEjemplo: 'Ana',
   remitente: 'Rebeca Cáceres <elexitodesertu@rebecacaceres.com>'
 };
