@@ -270,6 +270,7 @@ ${p('Así te aparecerá a tu hora, estés donde estés:', 'margin-bottom:8px')}
 ${calendarButtons(x.id)}
 <h2 style="margin:6px 0 8px;font-family:${SERIF};font-size:22px;font-weight:normal;color:${C.ink}">2. El enlace te llega 24 horas antes</h2>
 ${p('El viernes 27 a las 11:00 (hora de Madrid) te enviaré por email el enlace para entrar al directo. No tienes que hacer nada más hasta entonces.')}
+${p('Si este email te ha llegado a la pestaña <strong>Promociones</strong> de Gmail, arrástralo a <strong>Principal</strong> para no perderte el del viernes.')}
 <h2 style="margin:6px 0 8px;font-family:${SERIF};font-size:22px;font-weight:normal;color:${C.ink}">3. ¿Tienes alguna pregunta?</h2>
 ${p('Respóndeme a este email con cualquier duda sobre el taller. Y si hay algo que te gustaría que tratáramos, cuéntamelo también: lo tendré en cuenta.')}
 ${small('El recibo del pago te llega en un email aparte, de Stripe.')}
