@@ -7,7 +7,7 @@ var RC_PAGO = {
   // Segundo formulario de Brevo, ligado a la lista "Newsletter": solo se envía si la persona marca la casilla.
   brevoNewsletterFormUrl: 'https://e0d75c2b.sibforms.com/serve/MUIFALK0uFrqzpaVi788xANaHp1qSQCMooSPs2f1ar1KH9Mrjp8wGa18bh8CPQPy9glSK_cl7tp5jOdEqE0vDbAvgIi_Y6XEa84RPH3m8_d31yRyt51PanJKB2I5Y_i9dzQUEs6yQkw96wTUOeWAeOVV8fNu-CmSItMUhdOYK8CjVThZxs_aqQxLcIn_vZBXxMS404XjuaoNVREJ7Q==',
   // Stripe → Enlaces de pago → (enlace del taller) → copiar URL. Tiene la forma https://buy.stripe.com/xxxx
-  stripePaymentLink: 'https://buy.stripe.com/test_8x2eVd8zL22h8TAcdxe7m00'
+  stripePaymentLink: 'https://buy.stripe.com/00wdR9f3ZcPnc8Xg7Nf3a06'
 };
 
 (function (config) {

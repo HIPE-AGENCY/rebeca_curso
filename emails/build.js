@@ -134,7 +134,7 @@ function layout({ preheader, accent, body, assets, motivo }) {
   <tr><td class="pad" style="padding:22px 48px 26px;background:${C.paper};border-top:1px solid ${C.line}">
     <p style="margin:0 0 8px;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">${motivo}</p>
     <p style="margin:0 0 8px;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Un programa educativo basado en la investigación psicológica y la experiencia clínica. No es terapia ni sustituye la atención de un profesional de la salud mental.</p>
-    <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Rebeca Cáceres · C/ Fuencarral, 105, 28004 Madrid · <a href="mailto:elexitodesertu@rebecacaceres.com" style="color:${C.muted}">elexitodesertu@rebecacaceres.com</a> · <a href="{{ unsubscribe }}" style="color:${C.muted}">Darme de baja</a></p>
+    <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Rebeca Cáceres · Tribeca Lifestyle · C/ Silva, 2, 5.º, puerta 6, 28013 Madrid · <a href="mailto:elexitodesertu@rebecacaceres.com" style="color:${C.muted}">elexitodesertu@rebecacaceres.com</a> · <a href="{{ unsubscribe }}" style="color:${C.muted}">Darme de baja</a></p>
   </td></tr>
 </table>
 </td></tr>
