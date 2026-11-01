@@ -22,7 +22,7 @@ const CONFIG = {
   enlaceGrabacion: 'https://ENLACE-DE-LA-GRABACION-PENDIENTE',
   enlaceEncuesta: 'https://ENLACE-DE-LA-ENCUESTA-PENDIENTE',
   // Página de rebecacaceres.com donde se apunta a la newsletter.
-  enlaceNewsletter: 'https://ENLACE-DE-LA-NEWSLETTER-PENDIENTE',
+  enlaceNewsletter: 'https://rebecacaceres.com/#newsletter',
   // Escenario A: hay un límite de plazas real fijado en Stripe. Escenario B: no hay límite; la urgencia es la fecha de cierre.
   escenario: 'B',
   cierreInscripciones: 'el viernes 27 de noviembre a las 23:59 (hora de Madrid)',
@@ -134,7 +134,7 @@ function layout({ preheader, accent, body, assets, motivo }) {
   <tr><td class="pad" style="padding:22px 48px 26px;background:${C.paper};border-top:1px solid ${C.line}">
     <p style="margin:0 0 8px;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">${motivo}</p>
     <p style="margin:0 0 8px;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Un programa educativo basado en la investigación psicológica y la experiencia clínica. No es terapia ni sustituye la atención de un profesional de la salud mental.</p>
-    <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Rebeca Cáceres · Tribeca Lifestyle · C/ Silva, 2, 5.º, puerta 6, 28013 Madrid · <a href="mailto:elexitodesertu@rebecacaceres.com" style="color:${C.muted}">elexitodesertu@rebecacaceres.com</a> · <a href="{{ unsubscribe }}" style="color:${C.muted}">Darme de baja</a></p>
+    <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${C.muted}">Rebeca Cáceres · Tribeca Lifestyle, S.L. · C/ Silva, 2, 5.º, puerta 6, 28013 Madrid · <a href="mailto:elexitodesertu@rebecacaceres.com" style="color:${C.muted}">elexitodesertu@rebecacaceres.com</a> · <a href="{{ unsubscribe }}" style="color:${C.muted}">Darme de baja</a></p>
   </td></tr>
 </table>
 </td></tr>
