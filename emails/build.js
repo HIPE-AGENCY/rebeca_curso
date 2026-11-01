@@ -18,7 +18,7 @@ const CONFIG = {
   landing: 'https://elexitodesertu.rebecacaceres.com/',
   calendarioIcs: 'https://elexitodesertu.rebecacaceres.com/assets/el-exito-de-ser-tu.ics',
   // Pendientes: sustituir por los enlaces reales cuando existan.
-  enlaceDirecto: 'https://ENLACE-DEL-DIRECTO-PENDIENTE',
+  enlaceDirecto: 'https://us06web.zoom.us/j/6265177818',
   enlaceGrabacion: 'https://ENLACE-DE-LA-GRABACION-PENDIENTE',
   enlaceEncuesta: 'https://ENLACE-DE-LA-ENCUESTA-PENDIENTE',
   // Página de rebecacaceres.com donde se apunta a la newsletter.
