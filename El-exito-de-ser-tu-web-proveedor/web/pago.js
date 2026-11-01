@@ -48,9 +48,16 @@ var RC_PAGO = {
     return Promise.race([Promise.all(requests), timeout]);
   }
 
+  // Código promocional que llega en la URL (?codigo=BLACKFRIDAY, desde los emails): Stripe lo aplica en el pago.
+  var promoCode = (new URLSearchParams(location.search).get('codigo') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40);
+  if (promoCode && !status.textContent) {
+    status.textContent = 'Código ' + promoCode + ': se aplicará en la página de pago.';
+  }
+
   function stripeUrl(email) {
     var separator = config.stripePaymentLink.indexOf('?') === -1 ? '?' : '&';
-    return config.stripePaymentLink + separator + 'prefilled_email=' + encodeURIComponent(email) + '&locale=es';
+    return config.stripePaymentLink + separator + 'prefilled_email=' + encodeURIComponent(email) + '&locale=es' +
+      (promoCode ? '&prefilled_promo_code=' + encodeURIComponent(promoCode) : '');
   }
 
   form.addEventListener('submit', function (event) {

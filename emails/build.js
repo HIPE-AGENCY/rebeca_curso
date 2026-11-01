@@ -29,7 +29,11 @@ const CONFIG = {
   // Atributo de Brevo con el nombre: FIRSTNAME o NOMBRE, según la cuenta.
   atributoNombre: 'NOMBRE',
   nombreEjemplo: 'Ana',
-  remitente: 'Rebeca Cáceres <elexitodesertu@rebecacaceres.com>'
+  remitente: 'Rebeca Cáceres <elexitodesertu@rebecacaceres.com>',
+  // Black Friday (viernes 27): código promocional de Stripe y precio con el descuento. Confirmar ambos antes de programar.
+  codigoBlackFriday: 'BLACKFRIDAY',
+  descuentoBlackFriday: '30 %',
+  precioBlackFriday: '105 €'
 };
 
 const C = { ink: '#111b26', paper: '#f9f7f3', pink: '#ff609f', pinkInk: '#a92e60', aqua: '#61dfcf', tealInk: '#167c73', lime: '#d4f46c', muted: '#4d5660', line: '#e6e1d8' };
@@ -252,6 +256,25 @@ ${p('Si llevas unos días dándole vueltas, quizá sea justo eso lo que vale la 
 ${button('Reservar mi plaza', utm(CONFIG.inscripcion, x.id))}
 ${small('Sábado 28 de noviembre · 11:00–14:00 Madrid (05:00 Miami y Colombia · 06:00 Venezuela) · Online en directo + grabación 30 días · 150 €')}
 ${signature(x.assets, 'Ojalá nos veamos el sábado,')}`
+  },
+  {
+    id: '02d-black-friday', fase: 'Antes de comprar', estado: 'Pedido',
+    nombre: 'Black Friday: último día con descuento',
+    cuando: 'Viernes 27 de noviembre, 9:00 (Madrid). Último día de inscripción.',
+    quien: 'Lista Newsletter, excluyendo Inscritos (incluye a quien se interesó y marcó la newsletter).',
+    asunto: `Solo hoy: ${CONFIG.descuentoBlackFriday} en El éxito de ser tú`,
+    preheader: 'Black Friday y último día para apuntarte. Cierra esta noche a las 23:59.',
+    accent: C.pinkInk, motivo: MOTIVO_NEWSLETTER,
+    aviso: 'Programar solo si el cupón de Stripe está activo hasta el viernes 27 a las 23:59 (hora de Madrid).',
+    body: (x) => `${h1(`Hoy es el día para ${em('elegirte.')}`)}
+${p(`${x.saludo}`)}
+${p(`Hoy es Black Friday y, además, el último día para apuntarte al taller <strong>El éxito de ser tú</strong>. Por eso quería escribirte: solo hoy tienes un <strong>${CONFIG.descuentoBlackFriday} de descuento</strong>.`)}
+${p(`Tu plaza se queda en <strong>${CONFIG.precioBlackFriday}</strong> en lugar de 150 €. El código <strong>${CONFIG.codigoBlackFriday}</strong> se aplica solo al pulsar el botón.`)}
+${button('Reservar mi plaza con descuento', utm(`${CONFIG.inscripcion}?codigo=${CONFIG.codigoBlackFriday}`, x.id))}
+${infoBox([...DATOS_TALLER.slice(0, 2), ['Inversión', `<s>150 €</s> ${CONFIG.precioBlackFriday} solo hoy`]])}
+${p('Son tres horas para cuestionar, elegir y empezar a practicar. Y si no puedes conectarte en directo, tendrás la grabación durante 30 días.')}
+${small(`El código ${CONFIG.codigoBlackFriday} es válido hasta hoy, viernes 27 de noviembre, a las 23:59 (hora de Madrid), cuando se cierran las inscripciones. Si no se aplica solo, escríbelo en la página de pago.`)}
+${signature(x.assets, 'Te espero mañana,')}`
   },
   {
     id: '03-confirmacion', fase: 'Después de comprar', estado: 'Pedido',
