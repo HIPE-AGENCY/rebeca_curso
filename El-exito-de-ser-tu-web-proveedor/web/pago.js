@@ -7,7 +7,7 @@ var RC_PAGO = {
   // Segundo formulario de Brevo, ligado a la lista "Newsletter": solo se envía si la persona marca la casilla.
   brevoNewsletterFormUrl: 'https://e0d75c2b.sibforms.com/serve/MUIFALK0uFrqzpaVi788xANaHp1qSQCMooSPs2f1ar1KH9Mrjp8wGa18bh8CPQPy9glSK_cl7tp5jOdEqE0vDbAvgIi_Y6XEa84RPH3m8_d31yRyt51PanJKB2I5Y_i9dzQUEs6yQkw96wTUOeWAeOVV8fNu-CmSItMUhdOYK8CjVThZxs_aqQxLcIn_vZBXxMS404XjuaoNVREJ7Q==',
   // Stripe → Enlaces de pago → (enlace del taller) → copiar URL. Tiene la forma https://buy.stripe.com/xxxx
-  stripePaymentLink: 'https://buy.stripe.com/00wdR9f3ZcPnc8Xg7Nf3a06',
+  stripePaymentLink: 'https://buy.stripe.com/eVq3cv7Bx4iReh5f3Jf3a07',
   // Cierre de inscripciones: viernes 27 de noviembre de 2026, 23:59 en Madrid (22:59 UTC).
   // A partir de ahí el formulario se desactiva. El enlace de Stripe hay que desactivarlo aparte.
   cierre: Date.UTC(2026, 10, 27, 22, 59, 0)
