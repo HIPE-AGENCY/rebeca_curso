@@ -1,0 +1,19 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Encuesta · El éxito de ser tú · Rebeca Cáceres</title><meta name="robots" content="noindex"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#111b26"><link rel="stylesheet" href="taller.css"><link rel="stylesheet" href="approved.css"><link rel="stylesheet" href="inscripcion.css"><link rel="stylesheet" href="legal.css"><link rel="stylesheet" href="simplificada.css"><script src="analitica.js" defer></script></head><body class="registration-page"><header><a href="./" aria-label="Volver al taller"><img class="logo" src="assets/logo.svg" alt="Rebeca Cáceres"></a><a class="back-link" href="./">← Volver al taller</a></header>
+<main class="thanks-original">
+<div class="eyebrow">Tu opinión</div>
+<h1>¿Qué te has<br><em>llevado?</em></h1>
+<p class="registration-lead" id="encuesta">La encuesta estará disponible aquí después del taller.</p>
+<p class="thanks-help">¿Prefieres contármelo directamente? Escríbeme a <a href="mailto:elexitodesertu@rebecacaceres.com">elexitodesertu@rebecacaceres.com</a>.</p>
+</main>
+<script>
+/* Encuesta: pega en ENCUESTA_URL el enlace del formulario (p. ej. Formularios de Google). Mientras esté vacía, se muestra el aviso. */
+var ENCUESTA_URL = '';
+if (ENCUESTA_URL) {
+  document.getElementById('encuesta').innerHTML = 'Te llevamos a la encuesta… Si no se abre, <a href="' + ENCUESTA_URL + '">pulsa aquí</a>.';
+  location.replace(ENCUESTA_URL);
+}
+</script>
+</main>
+<aside class="registration-education">Un programa educativo basado en la investigación psicológica y la experiencia clínica. No es terapia ni sustituye la atención de un profesional de la salud mental.</aside>
+<footer class="registration-footer"><span>Salud mental · Éxito · Coherencia</span><nav class="legal-links" aria-label="Información legal"><a href="https://rebecacaceres.com/aviso-legal/">Aviso legal</a><a href="https://rebecacaceres.com/politica-de-privacidad/">Privacidad</a><a href="condiciones">Condiciones</a><a href="cookies">Cookies</a></nav><a href="./">Volver al taller <svg class="arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></a></footer>
+</body></html>

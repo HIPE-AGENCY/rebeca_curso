@@ -19,8 +19,8 @@ const CONFIG = {
   calendarioIcs: 'https://elexitodesertu.rebecacaceres.com/assets/el-exito-de-ser-tu.ics',
   // Pendientes: sustituir por los enlaces reales cuando existan.
   enlaceDirecto: 'https://us06web.zoom.us/j/6265177818',
-  enlaceGrabacion: 'https://ENLACE-DE-LA-GRABACION-PENDIENTE',
-  enlaceEncuesta: 'https://ENLACE-DE-LA-ENCUESTA-PENDIENTE',
+  enlaceGrabacion: 'https://elexitodesertu.rebecacaceres.com/grabacion',
+  enlaceEncuesta: 'https://elexitodesertu.rebecacaceres.com/encuesta',
   // Página de rebecacaceres.com donde se apunta a la newsletter.
   enlaceNewsletter: 'https://rebecacaceres.com/#newsletter',
   // Escenario A: hay un límite de plazas real fijado en Stripe. Escenario B: no hay límite; la urgencia es la fecha de cierre.
