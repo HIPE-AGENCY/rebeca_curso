@@ -296,6 +296,7 @@ ${p('El viernes 27 a las 11:00 (hora de Madrid) te enviaré por email el enlace 
 ${p('Si este email te ha llegado a la pestaña <strong>Promociones</strong> de Gmail, arrástralo a <strong>Principal</strong> para no perderte el del viernes.')}
 <h2 style="margin:6px 0 8px;font-family:${SERIF};font-size:22px;font-weight:normal;color:${C.ink}">3. ¿Tienes alguna pregunta?</h2>
 ${p('Respóndeme a este email con cualquier duda sobre el taller. Y si hay algo que te gustaría que tratáramos, cuéntamelo también: lo tendré en cuenta.')}
+${small('Al inscribirte solicitaste que el taller y el acceso a su grabación se presten antes de que termine el plazo de desistimiento de 14 días, y reconociste que pierdes ese derecho una vez impartido el taller. Tienes las <a href="https://elexitodesertu.rebecacaceres.com/condiciones" style="color:#4d5660">condiciones de contratación</a>, con el modelo de desistimiento, en la web.')}
 ${small('El recibo del pago te llega en un email aparte, de Stripe.')}
 ${signature(x.assets, 'Tengo muchas ganas de verte,')}`
   },
