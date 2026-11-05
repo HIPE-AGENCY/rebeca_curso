@@ -15,7 +15,7 @@ Web: **https://elexitodesertu.rebecacaceres.com** · Emails del flujo: `emails/i
 | Stripe real en la web | En la rama `stripe-real-tribeca`, **sin publicar** |
 | Titular Tribeca Lifestyle, S.L. en cookies, inscripción, condiciones y emails | Hecho en la rama |
 | Cierre automático del formulario (viernes 27, 23:59) | Hecho en la rama |
-| Condiciones de contratación | **Borrador**, faltan decisiones de Rebeca y su asesor |
+| Condiciones de contratación | Completas, sin aviso de borrador (5 nov.); falta que las revise el asesor |
 | Plantillas en Brevo | Llevan el pie antiguo; se resuben al final |
 | Píxel de Meta y anuncios | Pendiente |
 
@@ -23,13 +23,14 @@ Fusionar `stripe-real-tribeca` en `main` publica la landing con el cobro real al
 
 ## 1. Rebeca y su asesor
 
-- [ ] Reembolsos, derecho de desistimiento, no asistencia, cancelación o cambio de fecha.
-- [ ] Plataforma del directo y dónde se aloja la grabación; si en ella salen participantes.
+- [x] Reembolsos: 100 % hasta el sábado 21 a las 23:59; no asistencia sin reembolso fuera de ese plazo; cancelación o aplazamiento: nueva fecha o reembolso, a elegir.
+- [x] Directo por Zoom; en la grabación pueden salir participantes (avisado en condiciones, aviso de privacidad y email 04).
+- [ ] Dónde se aloja la grabación.
 - [x] Datos del Registro Mercantil de Tribeca Lifestyle, S.L. (tomo 43246, folio 1, hoja M-764067, inscripción 1.ª), ya en las condiciones.
-- [ ] Email de contacto para clientes.
+- [x] Email de contacto para clientes: elexitodesertu@rebecacaceres.com en toda la web.
 - [x] IVA: formación no reglada, 21 % (Pilar Mirón, 5 nov.). Ventas fuera de la UE: factura sin IVA con la mención «Venta fuera de la U.E. NO aplica IVA».
 - [ ] IVA a compradores particulares de otros países de la UE: confirmar con Pilar si va el IVA español o el del país del comprador.
-- [ ] Facturas: quién las emite (Stripe o la gestoría) y cómo se piden los datos fiscales (en las condiciones: por email a exitodesertu@rebecacaceres.com).
+- [ ] Facturas: quién las emite (Stripe o la gestoría) y cómo se piden los datos fiscales (en las condiciones: por email a elexitodesertu@rebecacaceres.com).
 - [ ] Nombre visible en la página de pago de Stripe (ahora «Tribeca Psicólogos»).
 - [ ] Revisar las condiciones y la política de privacidad (rama `privacidad-taller` del repo de la web).
 - [ ] Validar los emails 01b y 09 a quien no se apuntó a la newsletter.
@@ -61,7 +62,7 @@ Fusionar `stripe-real-tribeca` en `main` publica la landing con el cobro real al
 
 ## 5. Lanzamiento
 
-- [ ] Quitar el aviso de borrador de las condiciones.
+- [x] Quitar el aviso de borrador de las condiciones.
 - [ ] Fusionar `stripe-real-tribeca` en `main`.
 - [ ] Desde el móvil: compra real de 150 € con reembolso, un código gratuito y un registro sin pagar (01 a las 3 h).
 - [ ] Excluir las compras de prueba de Analytics.

@@ -318,7 +318,7 @@ ${list([
 ], C.tealInk)}
 ${p('Y piensa en <strong>una decisión o un cambio</strong> que te esté rondando. En la tercera hora trabajaremos sobre ella. Compartir será siempre voluntario.')}
 <h2 style="margin:10px 0 8px;font-family:${SERIF};font-size:22px;font-weight:normal;color:${C.ink}">Para el sábado</h2>
-${list(['Un sitio tranquilo y una buena conexión.', 'Papel y bolígrafo: escribir ayuda a pensar.', 'La cámara, si te apetece. No es obligatoria.'], C.pinkInk)}
+${list(['Un sitio tranquilo y una buena conexión.', 'Papel y bolígrafo: escribir ayuda a pensar.', 'La cámara, si te apetece. No es obligatoria. El taller se graba: si prefieres no salir en la grabación, déjala apagada.'], C.pinkInk)}
 ${signature(x.assets, 'Nos vemos el sábado,')}`
   },
   {
