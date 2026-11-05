@@ -25,8 +25,11 @@ Fusionar `stripe-real-tribeca` en `main` publica la landing con el cobro real al
 
 - [ ] Reembolsos, derecho de desistimiento, no asistencia, cancelación o cambio de fecha.
 - [ ] Plataforma del directo y dónde se aloja la grabación; si en ella salen participantes.
-- [ ] Datos del Registro Mercantil de Tribeca Lifestyle, S.L.; email de contacto para clientes.
-- [ ] IVA (también para compradores de otros países de la UE) y facturas.
+- [x] Datos del Registro Mercantil de Tribeca Lifestyle, S.L. (tomo 43246, folio 1, hoja M-764067, inscripción 1.ª), ya en las condiciones.
+- [ ] Email de contacto para clientes.
+- [x] IVA: formación no reglada, 21 % (Pilar Mirón, 5 nov.). Ventas fuera de la UE: factura sin IVA con la mención «Venta fuera de la U.E. NO aplica IVA».
+- [ ] IVA a compradores particulares de otros países de la UE: confirmar con Pilar si va el IVA español o el del país del comprador.
+- [ ] Facturas: quién las emite (Stripe o la gestoría) y cómo se piden los datos fiscales (en las condiciones: por email a exitodesertu@rebecacaceres.com).
 - [ ] Nombre visible en la página de pago de Stripe (ahora «Tribeca Psicólogos»).
 - [ ] Revisar las condiciones y la política de privacidad (rama `privacidad-taller` del repo de la web).
 - [ ] Validar los emails 01b y 09 a quien no se apuntó a la newsletter.
