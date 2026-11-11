@@ -42,7 +42,7 @@
   }
 
   /* 2. Cuenta atrás hasta el 28 de noviembre de 2026, 11:00 en Madrid (10:00 UTC). */
-  var start = Date.UTC(2026, 10, 28, 10, 0, 0);
+  var start = 0; // Cuenta atrás desactivada hasta confirmar el horario de la nueva fecha (16 ene 2027).
   var countdown = document.querySelector('[data-countdown]');
   var shortCountdown = document.querySelector('[data-countdown-short]');
   var units = countdown ? {
